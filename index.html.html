@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bodh Raj | Project Manager & Front-End Developer</title>
+<meta name="description" content="Bodh Raj — Project Manager & Front-End Developer with 3+ years building and shipping websites on WordPress, Shopify, Wix, Webflow and Squarespace.">
+<style>
+  :root{
+    --ink:#101728;
+    --ink-soft:#4b5468;
+    --paper:#ffffff;
+    --mist:#f6f7fb;
+    --line:#e6e8f0;
+    --indigo:#4338ca;
+    --indigo-2:#4f46e5;
+    --amber:#f59e0b;
+    --amber-soft:#fff4e0;
+    --navy-deep:#0b1120;
+    --radius:16px;
+    --shadow:0 10px 30px -12px rgba(16,23,40,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces','Georgia',serif;font-weight:600;letter-spacing:-.01em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .accent{color:var(--indigo-2);}
+  .accent-amber{color:var(--amber);}
+
+  /* reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+  }
+
+  /* NAV */
+  header.site{
+    position:sticky;top:0;z-index:100;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:19px;display:flex;align-items:center;gap:8px;}
+  .logo .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);display:inline-block;}
+  .nav-links{display:flex;gap:30px;font-size:14.5px;color:var(--ink-soft);}
+  .nav-links a{transition:color .2s;}
+  .nav-links a:hover{color:var(--indigo-2);}
+  .nav-cta{display:flex;align-items:center;gap:16px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:999px;font-size:14.5px;font-weight:600;
+    border:1px solid transparent;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease, background .2s;
+  }
+  .btn-primary{background:var(--indigo-2);color:#fff;box-shadow:0 8px 20px -8px rgba(79,70,229,.6);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(79,70,229,.7);}
+  .btn-ghost{border-color:var(--line);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--indigo-2);color:var(--indigo-2);}
+  .menu-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;padding:76px 0 40px;background:
+    radial-gradient(600px 300px at 85% -10%, #eef0ff 0%, transparent 60%),
+    radial-gradient(500px 260px at 5% 10%, var(--amber-soft) 0%, transparent 60%);}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
+    background:#eef2ff;color:var(--indigo);padding:8px 14px;border-radius:999px;margin-bottom:22px;
+  }
+  .badge .pulse{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5);}70%{box-shadow:0 0 0 8px rgba(34,197,94,0);}100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}}
+  .eyebrow-line{font-size:14px;color:var(--ink-soft);margin-bottom:14px;}
+  h1.hero-title{font-size:56px;line-height:1.05;margin-bottom:18px;}
+  .hero-sub{font-size:17px;color:var(--ink-soft);max-width:520px;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:14px;margin-bottom:44px;}
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;max-width:520px;}
+  .stat{padding:18px 12px;text-align:center;border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--indigo-2);}
+  .stat .label{font-size:11.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin-top:2px;}
+
+  .hero-visual{position:relative;display:flex;justify-content:center;}
+  .avatar-card{
+    position:relative;width:100%;max-width:340px;border-radius:24px;overflow:hidden;
+    background:linear-gradient(160deg,#1e1b4b,#312e81 55%,#4338ca);
+    aspect-ratio:4/5;display:flex;align-items:flex-end;justify-content:center;
+    box-shadow:0 30px 60px -20px rgba(30,27,75,.5);
+  }
+  .avatar-initials{
+    font-family:'Fraunces',serif;font-size:120px;color:rgba(255,255,255,.14);font-weight:600;
+    position:absolute;top:20px;right:14px;
+  }
+  .avatar-caption{
+    position:relative;margin:0 16px 16px;padding:14px 16px;border-radius:14px;
+    background:rgba(255,255,255,.12);backdrop-filter:blur(8px);color:#fff;width:calc(100% - 32px);
+  }
+  .avatar-caption strong{display:block;font-family:'Fraunces',serif;font-size:15px;}
+  .avatar-caption span{font-size:12.5px;color:#c7d2fe;}
+  .float-chip{
+    position:absolute;background:#fff;border-radius:12px;padding:8px 12px;font-size:12.5px;font-weight:600;
+    box-shadow:var(--shadow);display:flex;align-items:center;gap:6px;animation:float 4s ease-in-out infinite;
+  }
+  .chip-a{top:6%;left:-6%;animation-delay:.2s;}
+  .chip-b{top:38%;right:-10%;animation-delay:1s;}
+  .chip-c{bottom:8%;left:-10%;animation-delay:1.8s;}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+
+  .marquee-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--mist);overflow:hidden;padding:16px 0;margin-top:56px;}
+  .marquee{display:flex;gap:56px;width:max-content;animation:scroll 22s linear infinite;font-size:14px;font-weight:600;color:var(--ink-soft);letter-spacing:.02em;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* SECTION shell */
+  section{padding:96px 0;}
+  .section-head{text-align:center;max-width:600px;margin:0 auto 56px;}
+  .eyebrow{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--indigo-2);background:#eef2ff;padding:6px 14px;border-radius:999px;margin-bottom:16px;
+  }
+  .section-head h2{font-size:36px;margin-bottom:12px;}
+  .section-head p{color:var(--ink-soft);font-size:16px;}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* SERVICES */
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#dcdfea;}
+  .icon-badge{width:42px;height:42px;border-radius:11px;background:var(--amber-soft);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px;}
+  .card h3{font-size:16.5px;margin-bottom:6px;font-family:'Inter',sans-serif;font-weight:600;}
+  .card p{font-size:13.5px;color:var(--ink-soft);}
+
+  /* PORTFOLIO */
+  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .proj-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper);transition:transform .25s ease, box-shadow .25s ease;}
+  .proj-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .proj-thumb{aspect-ratio:16/10;background:linear-gradient(135deg,#eef2ff,#e0e7ff);display:flex;align-items:center;justify-content:center;color:#a5b4fc;font-size:13px;font-weight:600;letter-spacing:.03em;}
+  .proj-body{padding:20px;}
+  .proj-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-bottom:6px;display:block;}
+  .proj-body h3{font-size:17px;margin-bottom:6px;font-family:'Inter',sans-serif;font-weight:600;}
+  .proj-body p{font-size:13.5px;color:var(--ink-soft);margin-bottom:14px;}
+  .proj-stack{display:flex;gap:6px;flex-wrap:wrap;}
+  .pill{font-size:11px;background:var(--mist);border:1px solid var(--line);padding:4px 9px;border-radius:999px;color:var(--ink-soft);}
+  .note-inline{grid-column:1/-1;text-align:center;font-size:13px;color:var(--ink-soft);border:1px dashed var(--line);border-radius:12px;padding:16px;}
+
+  /* EXPERIENCE */
+  .exp-wrap{max-width:760px;margin:0 auto;position:relative;padding-left:32px;}
+  .exp-wrap::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line);}
+  .exp-item{position:relative;padding-bottom:36px;}
+  .exp-item::before{content:"";position:absolute;left:-32px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--indigo-2);border:3px solid #eef2ff;}
+  .exp-item .when{font-size:12.5px;color:var(--indigo-2);font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px;}
+  .exp-item h3{font-size:19px;margin-bottom:4px;}
+  .exp-item .role-meta{font-size:13.5px;color:var(--ink-soft);margin-bottom:10px;}
+  .exp-item p{font-size:14.5px;color:var(--ink-soft);}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .skill-card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--paper);}
+  .skill-card h3{font-size:15px;margin-bottom:12px;display:flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-weight:600;}
+  .skill-card ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px;}
+  .skill-card li{font-size:12px;background:var(--mist);padding:5px 10px;border-radius:8px;color:var(--ink-soft);}
+
+  /* PROCESS */
+  .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .proc-card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:relative;background:var(--paper);}
+  .proc-num{font-family:'Fraunces',serif;font-size:34px;color:#e0e3ee;font-weight:600;position:absolute;top:16px;right:20px;}
+  .proc-card h3{font-size:16.5px;margin:26px 0 8px;font-family:'Inter',sans-serif;font-weight:600;}
+  .proc-card p{font-size:13.5px;color:var(--ink-soft);}
+
+  /* FAQ */
+  .faq-list{max-width:720px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 4px;font-size:15.5px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--ink);}
+  .faq-q .plus{transition:transform .25s ease;color:var(--indigo-2);font-size:18px;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:14px;color:var(--ink-soft);}
+  .faq-a-in{padding:0 4px 20px;}
+
+  /* CTA BAND */
+  .cta-band{
+    background:linear-gradient(120deg,var(--navy-deep),#1e1b4b 60%,#3730a3);
+    color:#fff;border-radius:28px;margin:0 24px;padding:64px 40px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(400px 200px at 20% 0%, rgba(245,158,11,.25), transparent 60%);}
+  .cta-band .badge{background:rgba(255,255,255,.12);color:#e0e7ff;}
+  .cta-band h2{font-size:34px;margin-bottom:14px;position:relative;}
+  .cta-band p{color:#c7d2fe;max-width:520px;margin:0 auto 30px;position:relative;font-size:15.5px;}
+  .cta-band .hero-ctas{justify-content:center;position:relative;}
+  .cta-band .btn-ghost{border-color:rgba(255,255,255,.3);color:#fff;}
+  .trust-row{display:flex;gap:26px;justify-content:center;margin-top:28px;font-size:12.5px;color:#a5b4fc;flex-wrap:wrap;position:relative;}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;}
+  .contact-info h3{font-size:15px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin-bottom:18px;}
+  .contact-info > p{font-size:14.5px;color:var(--ink-soft);margin-bottom:26px;}
+  .info-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px;}
+  .info-icon{width:38px;height:38px;border-radius:10px;background:var(--mist);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+  .info-row .label{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:#9aa1b5;}
+  .info-row .value{font-size:14.5px;font-weight:600;}
+  .social-row{display:flex;gap:10px;margin-top:22px;}
+  .social-row a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:border-color .2s, color .2s;}
+  .social-row a:hover{border-color:var(--indigo-2);color:var(--indigo-2);}
+
+  form.contact-form{background:var(--mist);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .form-row.full{grid-template-columns:1fr;}
+  label{font-size:12.5px;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:6px;}
+  input,select,textarea{
+    width:100%;padding:11px 13px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:14px;
+    font-family:inherit;color:var(--ink);
+  }
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--indigo-2);outline-offset:1px;border-color:transparent;}
+  textarea{resize:vertical;min-height:100px;}
+  .submit-note{font-size:12px;color:#9aa1b5;margin-top:12px;text-align:center;}
+
+  footer.site{background:var(--navy-deep);color:#c7d2fe;padding:40px 0;}
+  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-row .logo{color:#fff;}
+  .footer-links{display:flex;gap:22px;font-size:13.5px;}
+  .footer-links a:hover{color:#fff;}
+  .footer-bottom{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:12.5px;color:#7c85a3;text-align:center;}
+
+  @media(max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:280px;margin:0 auto;}
+    .services-grid,.skills-grid{grid-template-columns:repeat(2,1fr);}
+    .portfolio-grid,.process-grid{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+    h1.hero-title{font-size:40px;}
+  }
+  @media(max-width:600px){
+    .services-grid,.skills-grid,.portfolio-grid,.process-grid,.form-row{grid-template-columns:1fr;}
+    .stats-row{grid-template-columns:repeat(2,1fr);}
+    .stat:nth-child(2){border-right:none;}
+    h1.hero-title{font-size:32px;}
+    .cta-band{margin:0 12px;padding:44px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <div class="logo"><span class="dot"></span>Bodh Raj</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#contact">Hire Me</a>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge"><span class="pulse"></span> Available for new projects</div>
+      <div class="eyebrow-line">Project Manager · Front-End Developer · 3+ Years</div>
+      <h1 class="hero-title">I'm <span class="accent">Bodh Raj</span></h1>
+      <p class="hero-sub">I plan, build and ship websites — leading projects end-to-end on WordPress, Shopify, Wix, Webflow and Squarespace, while writing the front-end code that brings each design to life.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contact">Hire Me</a>
+        <a class="btn btn-ghost" href="#projects">View Portfolio</a>
+      </div>
+      <div class="stats-row" id="statsRow">
+        <div class="stat"><div class="num" data-count="35">0</div><div class="label">Projects</div></div>
+        <div class="stat"><div class="num" data-count="20">0</div><div class="label">Clients</div></div>
+        <div class="stat"><div class="num" data-count="98">0</div><div class="label">Satisfaction %</div></div>
+        <div class="stat"><div class="num" data-count="3">0</div><div class="label">Years Exp</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-card">
+        <div class="avatar-initials">BR</div>
+        <div class="avatar-caption">
+          <strong>Bodh Raj</strong>
+          <span>Project Manager · Front-End Dev</span>
+        </div>
+        <div class="float-chip chip-a">🟦 WordPress</div>
+        <div class="float-chip chip-b">🛍️ Shopify</div>
+        <div class="float-chip chip-c">🌐 Webflow</div>
+      </div>
+    </div>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee" id="marquee">
+      <span>WordPress</span><span>Shopify</span><span>Wix</span><span>Webflow</span><span>Squarespace</span><span>HTML/CSS/JS</span>
+      <span>WordPress</span><span>Shopify</span><span>Wix</span><span>Webflow</span><span>Squarespace</span><span>HTML/CSS/JS</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Services</span>
+      <h2>What I <span class="accent">Deliver</span></h2>
+      <p>From project kickoff to launch day — planning, building and shipping websites that work.</p>
+    </div>
+    <div class="services-grid">
+      <div class="card reveal"><div class="icon-badge">🗂️</div><h3>Project Management</h3><p>Scoping, timelines and delivery — keeping every project on track and on budget.</p></div>
+      <div class="card reveal"><div class="icon-badge">🟦</div><h3>WordPress Development</h3><p>Custom themes, page builders, plugin configuration and site maintenance.</p></div>
+      <div class="card reveal"><div class="icon-badge">🛍️</div><h3>Shopify Development</h3><p>Theme customization, Liquid edits and storefront setup for eCommerce.</p></div>
+      <div class="card reveal"><div class="icon-badge">🌐</div><h3>Webflow & Wix</h3><p>Visual builds with clean structure, responsive layouts and CMS collections.</p></div>
+      <div class="card reveal"><div class="icon-badge">🧩</div><h3>Squarespace Sites</h3><p>Fast, polished sites for portfolios, small business and service brands.</p></div>
+      <div class="card reveal"><div class="icon-badge">💬</div><h3>Client Communication</h3><p>Clear updates, honest timelines and a single point of contact throughout.</p></div>
+      <div class="card reveal"><div class="icon-badge">⚡</div><h3>Speed & QA</h3><p>Performance checks and cross-browser testing before every launch.</p></div>
+      <div class="card reveal"><div class="icon-badge">📐</div><h3>Front-End Builds</h3><p>Hand-coded HTML, CSS and JS for custom sections and interactions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="background:var(--mist);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Portfolio</span>
+      <h2>Selected <span class="accent">Work</span></h2>
+      <p>A few placeholder slots below — swap these with your real projects and links.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="proj-card reveal">
+        <div class="proj-thumb">Project Screenshot</div>
+        <div class="proj-body">
+          <span class="proj-tag">WordPress</span>
+          <h3>Project Name One</h3>
+          <p>Short one-line description of the site and what you did on it.</p>
+          <div class="proj-stack"><span class="pill">WordPress</span><span class="pill">Elementor</span></div>
+        </div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-thumb">Project Screenshot</div>
+        <div class="proj-body">
+          <span class="proj-tag">Shopify</span>
+          <h3>Project Name Two</h3>
+          <p>Short one-line description of the store and results achieved.</p>
+          <div class="proj-stack"><span class="pill">Shopify</span><span class="pill">Liquid</span></div>
+        </div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-thumb">Project Screenshot</div>
+        <div class="proj-body">
+          <span class="proj-tag">Webflow</span>
+          <h3>Project Name Three</h3>
+          <p>Short one-line description of the build and your role in it.</p>
+          <div class="proj-stack"><span class="pill">Webflow</span><span class="pill">CMS</span></div>
+        </div>
+      </div>
+      <div class="note-inline reveal">Add 3–6 real projects here with screenshots, live links and results once you share them.</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Career</span>
+      <h2>Professional <span class="accent">Experience</span></h2>
+      <p>3+ years managing and building websites across multiple CMS platforms.</p>
+    </div>
+    <div class="exp-wrap">
+      <div class="exp-item reveal">
+        <div class="when">Current</div>
+        <h3>Project Manager & Front-End Developer</h3>
+        <div class="role-meta">Add company / agency name · Add dates</div>
+        <p>Leading website projects from scoping through launch, coordinating design and development, and building front-end sections across WordPress, Shopify, Wix, Webflow and Squarespace.</p>
+      </div>
+      <div class="exp-item reveal">
+        <div class="when">Earlier</div>
+        <h3>Front-End Developer</h3>
+        <div class="role-meta">Add company / agency name · Add dates</div>
+        <p>Built and maintained responsive websites, implemented custom sections, and supported multi-platform CMS projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="background:var(--mist);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Expertise</span>
+      <h2>Technical <span class="accent">Skills</span></h2>
+      <p>Platforms and tools used to plan, build and ship projects.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><h3>🗂️ Project Management</h3><ul><li>Scoping</li><li>Timelines</li><li>Client Comms</li><li>QA</li></ul></div>
+      <div class="skill-card reveal"><h3>🟦 WordPress</h3><ul><li>Custom Themes</li><li>Elementor</li><li>WooCommerce</li><li>Plugins</li></ul></div>
+      <div class="skill-card reveal"><h3>🛍️ Shopify</h3><ul><li>Liquid</li><li>Theme Custom.</li><li>Storefront Setup</li></ul></div>
+      <div class="skill-card reveal"><h3>🌐 Website Builders</h3><ul><li>Wix</li><li>Webflow</li><li>Squarespace</li></ul></div>
+      <div class="skill-card reveal"><h3>💻 Front-End</h3><ul><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Responsive Design</li></ul></div>
+      <div class="skill-card reveal"><h3>⚡ Performance</h3><ul><li>Page Speed</li><li>Cross-Browser QA</li><li>Accessibility Basics</li></ul></div>
+      <div class="skill-card reveal"><h3>🧰 Tools</h3><ul><li>Figma</li><li>Trello / Asana</li><li>Slack</li><li>Google Workspace</li></ul></div>
+      <div class="skill-card reveal"><h3>🤝 Other</h3><ul><li>Stakeholder Updates</li><li>Team Coordination</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Process</span>
+      <h2>From Idea to <span class="accent">Live Site</span></h2>
+      <p>A structured, transparent process from kickoff to launch.</p>
+    </div>
+    <div class="process-grid">
+      <div class="proc-card reveal"><div class="proc-num">01</div><h3>Discovery & Scoping</h3><p>Understand goals, audience and requirements before any work begins.</p></div>
+      <div class="proc-card reveal"><div class="proc-num">02</div><h3>Planning & Design</h3><p>Timeline, wireframes and platform selection agreed with the client.</p></div>
+      <div class="proc-card reveal"><div class="proc-num">03</div><h3>Build</h3><p>Development across the chosen CMS with regular progress check-ins.</p></div>
+      <div class="proc-card reveal"><div class="proc-num">04</div><h3>Testing & QA</h3><p>Cross-browser, responsive and performance checks before launch.</p></div>
+      <div class="proc-card reveal"><div class="proc-num">05</div><h3>Launch</h3><p>Deployment, DNS/hosting setup and final client walkthrough.</p></div>
+      <div class="proc-card reveal"><div class="proc-num">06</div><h3>Support</h3><p>Post-launch monitoring, fixes and ongoing updates as needed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--mist);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common <span class="accent">Questions</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">Which platforms do you work on? <span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-in">WordPress, Shopify, Wix, Webflow and Squarespace — from setup to full custom builds.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do you manage the whole project, or just build? <span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-in">Both — I can lead the project end-to-end, or join as a front-end developer within an existing team.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">How do you communicate during a project? <span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-in">Regular updates via email or WhatsApp, with a single point of contact for the whole build.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">What's your typical timeline? <span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-in">Depends on scope — small sites can launch in 1–2 weeks, larger builds take longer. Timeline is agreed upfront.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do you offer post-launch support? <span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-in">Yes — ongoing updates, fixes and monitoring are available after launch.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="padding:0;">
+  <div class="cta-band reveal">
+    <div class="badge">Currently accepting new projects</div>
+    <h2>Ready to Build <span class="accent-amber">Something Great?</span></h2>
+    <p>Let's plan and build a fast, well-run website project — from first call to launch day.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#contact">Start a Project</a>
+      <a class="btn btn-ghost" href="https://wa.me/917018439223" target="_blank" rel="noopener">Message on WhatsApp</a>
+    </div>
+    <div class="trust-row">
+      <span>Free consultation</span><span>24-hour response</span><span>Clear timelines</span>
+    </div>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Contact</span>
+      <h2 style="font-size:32px;margin-bottom:12px;">Let's <span class="accent">Connect</span></h2>
+      <p>Have a project in mind? Reach out and let's talk through the details.</p>
+
+      <div class="info-row">
+        <div class="info-icon">✉️</div>
+        <div><div class="label">Email</div><div class="value">braj.user@gmail.com</div></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📞</div>
+        <div><div class="label">Phone / WhatsApp</div><div class="value">+91 70184 39223</div></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">⏱️</div>
+        <div><div class="label">Response Time</div><div class="value">Within 24 hours</div></div>
+      </div>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/in/braj-user/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://wa.me/917018439223" target="_blank" rel="noopener" aria-label="WhatsApp">wa</a>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" onsubmit="event.preventDefault(); alert('Form submitted — connect this to your email service to receive messages.');">
+      <div class="form-row">
+        <div><label>First Name*</label><input required type="text"></div>
+        <div><label>Last Name*</label><input required type="text"></div>
+      </div>
+      <div class="form-row">
+        <div><label>Email*</label><input required type="email"></div>
+        <div><label>Phone</label><input type="tel"></div>
+      </div>
+      <div class="form-row full">
+        <div><label>Service*</label>
+          <select required>
+            <option value="">Select...</option>
+            <option>WordPress Development</option>
+            <option>Shopify Store / App</option>
+            <option>Wix Website</option>
+            <option>Webflow Website</option>
+            <option>Squarespace Website</option>
+            <option>Project Management</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div><label>Budget (USD)</label><input type="text" placeholder="e.g. 500 - 1000"></div>
+        <div><label>Timeline</label>
+          <select>
+            <option value="">Select...</option>
+            <option>ASAP (Rush)</option>
+            <option>1-2 Weeks</option>
+            <option>2-4 Weeks</option>
+            <option>1-2 Months</option>
+            <option>Flexible</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row full">
+        <div><label>Project Details*</label><textarea required placeholder="Tell me about your project..."></textarea></div>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;" type="submit">Send Message →</button>
+      <p class="submit-note">Response guaranteed within 24 hours</p>
+    </form>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-row">
+      <div class="logo"><span class="dot"></span>Bodh Raj</div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Bodh Raj. All rights reserved. · Built with clean code & attention to detail.</div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  // stat counters
+  const counters = document.querySelectorAll('.stat .num');
+  let countersDone = false;
+  const statObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting && !countersDone){
+        countersDone = true;
+        counters.forEach(c=>{
+          const target = parseInt(c.dataset.count,10);
+          let cur = 0;
+          const step = Math.max(1, Math.round(target/40));
+          const tick = ()=>{
+            cur += step;
+            if(cur >= target){ c.textContent = target + (target>=90?'%':'+'); }
+            else { c.textContent = cur; requestAnimationFrame(()=>setTimeout(tick,16)); }
+          };
+          tick();
+        });
+      }
+    });
+  },{threshold:.4});
+  const statsRow = document.getElementById('statsRow');
+  if(statsRow) statObserver.observe(statsRow);
+
+  // faq accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o=>{ o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; });
+      if(!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+
+  // mobile menu (simple toggle of nav-links display)
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('.nav-links');
+  if(toggle){
+    toggle.addEventListener('click', ()=>{
+      const showing = links.style.display === 'flex';
+      links.style.display = showing ? 'none' : 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '64px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = '#fff';
+      links.style.padding = '20px 24px';
+      links.style.borderBottom = '1px solid var(--line)';
+    });
+  }
+</script>
+</body>
+</html>
