@@ -1,628 +1,764 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bodh Raj | Project Manager & Front-End Developer</title>
-<meta name="description" content="Bodh Raj — Project Manager & Front-End Developer with 3+ years building and shipping websites on WordPress, Shopify, Wix, Webflow and Squarespace.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bodh Raj Portfolio</title>
+<meta name="description" content="Bodh Raj is a digital marketer and SEO specialist in Kurukshetra, India. Meta and Google Ads, SEO, WordPress, Shopify and Wix websites, plus digital marketing training at Digi Maniac.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bodh Raj | Digital Marketer &amp; SEO Specialist in Kurukshetra">
+<meta property="og:description" content="Rs 2 Cr+ ad spend managed, 55,000+ leads generated, 500+ students trained. Meta Ads, Google Ads, SEO and web.">
+<meta property="og:image" content="share.jpg">
+<link rel="icon" type="image/webp" href="bodh-raj-avatar.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
-  :root{
-    --ink:#101728;
-    --ink-soft:#4b5468;
-    --paper:#ffffff;
-    --mist:#f6f7fb;
-    --line:#e6e8f0;
-    --indigo:#4338ca;
-    --indigo-2:#4f46e5;
-    --amber:#f59e0b;
-    --amber-soft:#fff4e0;
-    --navy-deep:#0b1120;
-    --radius:16px;
-    --shadow:0 10px 30px -12px rgba(16,23,40,.12);
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    color:var(--ink);
-    background:var(--paper);
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{font-family:'Fraunces','Georgia',serif;font-weight:600;letter-spacing:-.01em;}
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
-  .accent{color:var(--indigo-2);}
-  .accent-amber{color:var(--amber);}
+/* Layout: one long scroll. Warm paper by default, dark on toggle. Hero = name + roles left, dot-chart centre, quick links right.
+   Then numbers, about (with photos), what I do (accordion), live Digi Maniac data, case studies, Feed My Fur, experience, stack, course bridge, contact. */
+:root{
+  --bg:#f3f2ef; --surf:#ffffff; --surf2:#f8f6f2; --ink:#0b0b0c; --mut:#5b5852; --line:#d9d4cb;
+  --ac:#ff6a1f; --ac2:#ffb02e; --acink:#0b0b0c; --acdeep:#b8440a; --p3:#15151a;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+:root[data-theme="dark"]{--bg:#060606;--surf:#111112;--surf2:#18181a;--ink:#f5f2ee;--mut:#a39e96;--line:#2a2826;--acdeep:#ff8a45;--p3:#f5f2ee;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body);overflow-x:hidden;transition:background .4s,color .4s}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.025em;margin:0;line-height:1.04;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:3px solid var(--ac);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:84px;scroll-margin-top:90px}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--acdeep);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.eyebrow::before{content:"";width:34px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--ac),var(--ac2))}
+.big{font-size:clamp(34px,5.2vw,60px);font-weight:800;letter-spacing:-.035em;margin-bottom:22px}
+.big em{font-style:normal;color:var(--ac)}
+.out{color:transparent;-webkit-text-stroke:1.3px var(--ink)}
+.lead{color:var(--mut);max-width:58ch;font-size:18px}
+.mono{font-family:var(--mono)}
+.num{font-variant-numeric:tabular-nums}
 
-  /* reduced motion */
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
-  }
+/* grain + mesh */
+body::after{content:"";position:fixed;inset:0;z-index:70;pointer-events:none;opacity:.06;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.mesh{position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(40% 40% at 20% 20%,color-mix(in srgb,var(--ac) 13%,transparent),transparent 70%),radial-gradient(35% 35% at 80% 70%,color-mix(in srgb,var(--ac2) 11%,transparent),transparent 70%);animation:mesh 24s ease-in-out infinite alternate}
+@keyframes mesh{to{transform:translate(6%,4%) rotate(8deg) scale(1.1)}}
+#sp{position:fixed;top:0;left:0;right:0;height:3px;z-index:80;background:linear-gradient(90deg,var(--ac),var(--ac2));transform:scaleX(0);transform-origin:0 50%}
 
-  /* NAV */
-  header.site{
-    position:sticky;top:0;z-index:100;
-    background:rgba(255,255,255,.85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
-  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:19px;display:flex;align-items:center;gap:8px;}
-  .logo .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);display:inline-block;}
-  .nav-links{display:flex;gap:30px;font-size:14.5px;color:var(--ink-soft);}
-  .nav-links a{transition:color .2s;}
-  .nav-links a:hover{color:var(--indigo-2);}
-  .nav-cta{display:flex;align-items:center;gap:16px;}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:12px 22px;border-radius:999px;font-size:14.5px;font-weight:600;
-    border:1px solid transparent;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease, background .2s;
-  }
-  .btn-primary{background:var(--indigo-2);color:#fff;box-shadow:0 8px 20px -8px rgba(79,70,229,.6);}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(79,70,229,.7);}
-  .btn-ghost{border-color:var(--line);color:var(--ink);}
-  .btn-ghost:hover{border-color:var(--indigo-2);color:var(--indigo-2);}
-  .menu-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;}
+/* buttons */
+.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:999px;font:600 15px var(--body);border:1.5px solid var(--ink);background:transparent;text-decoration:none;transition:color .35s,border-color .35s,transform .2s}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--ac),var(--ac2));transform:translateY(101%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.btn:hover::before{transform:none}
+.btn:hover{color:var(--acink);border-color:var(--ac)}
+.btn:active{transform:scale(.95)}
+.btn.pri{background:linear-gradient(90deg,var(--ac),var(--ac2));border-color:transparent;color:var(--acink)}
+.btn.pri::before{background:var(--ink)}
+.btn.pri:hover{color:var(--bg);border-color:var(--ink)}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.sdn{width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--acink);display:grid;place-items:center;font-size:24px;text-decoration:none;box-shadow:0 12px 30px -10px var(--ac);animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(7px)}}
 
-  /* HERO */
-  .hero{position:relative;overflow:hidden;padding:76px 0 40px;background:
-    radial-gradient(600px 300px at 85% -10%, #eef0ff 0%, transparent 60%),
-    radial-gradient(500px 260px at 5% 10%, var(--amber-soft) 0%, transparent 60%);}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;}
-  .badge{
-    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
-    background:#eef2ff;color:var(--indigo);padding:8px 14px;border-radius:999px;margin-bottom:22px;
-  }
-  .badge .pulse{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 1.8s infinite;}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5);}70%{box-shadow:0 0 0 8px rgba(34,197,94,0);}100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}}
-  .eyebrow-line{font-size:14px;color:var(--ink-soft);margin-bottom:14px;}
-  h1.hero-title{font-size:56px;line-height:1.05;margin-bottom:18px;}
-  .hero-sub{font-size:17px;color:var(--ink-soft);max-width:520px;margin-bottom:30px;}
-  .hero-ctas{display:flex;gap:14px;margin-bottom:44px;}
-  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;max-width:520px;}
-  .stat{padding:18px 12px;text-align:center;border-right:1px solid var(--line);}
-  .stat:last-child{border-right:none;}
-  .stat .num{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--indigo-2);}
-  .stat .label{font-size:11.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin-top:2px;}
+/* nav: always the dark pill */
+nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);left:50%;transform:translateX(-50%);z-index:50;width:min(1200px,calc(100% - 24px));display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 12px;border-radius:999px;background:#0e0e0f;color:#f5f2ee;border:1px solid #2a2826;box-shadow:0 16px 44px -16px rgba(0,0,0,.6)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font:700 19px var(--body);color:#f5f2ee}
+.logo img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--ac);box-shadow:0 0 18px -2px var(--ac);transition:transform .5s}
+.logo:hover img{transform:scale(1.08)}
+.links{display:flex;gap:2px}
+.links a{text-decoration:none;padding:12px 16px;border-radius:999px;font:500 14.5px var(--body);color:#a39e96;transition:background .3s,color .3s}
+.links a:hover{color:#fff}
+.links a.on{background:#27272b;color:#fff}
+.nr{display:flex;gap:10px;align-items:center}
+#theme{position:relative;width:80px;height:42px;border-radius:99px;border:1px solid #3a3a3f;background:#26262a;padding:0;transition:box-shadow .5s,background .5s,border-color .5s}
+#theme .k{position:absolute;top:4px;left:4px;width:32px;height:32px;border-radius:50%;background:#f5f2ee;display:grid;place-items:center;font-size:15px;color:#0b0b0c;transition:transform .5s cubic-bezier(.5,1.7,.4,1),background .4s,color .4s}
+#theme[aria-checked="true"]{background:linear-gradient(90deg,var(--ac),var(--ac2));border-color:transparent;box-shadow:0 0 18px var(--ac),0 0 44px color-mix(in srgb,var(--ac) 50%,transparent)}
+#theme[aria-checked="true"] .k{transform:translateX(38px);background:#0b0b0c;color:#ffb02e}
+.lt{display:flex;align-items:center;gap:12px;background:#f5f2ee;color:#0b0b0c;text-decoration:none;border-radius:999px;padding:5px 5px 5px 22px;font:600 14.5px var(--body);transition:box-shadow .3s}
+.lt:hover{box-shadow:0 0 24px -4px var(--ac)}
+.lt span{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;transition:transform .4s}
+.lt:hover span{transform:rotate(-45deg)}
+@media(max-width:1200px){.links a{padding:10px 11px;font-size:13.5px}}
+@media(max-width:1000px){
+  nav{flex-wrap:wrap;border-radius:28px;row-gap:4px;padding:8px 8px 6px 12px}
+  .links{order:3;width:100%;overflow-x:auto;scrollbar-width:none;padding:2px 0}
+  .links::-webkit-scrollbar{display:none}
+  .links a{white-space:nowrap}
+  .hero{padding-top:190px}
+  section{scroll-margin-top:140px}
+}
+@media(max-width:560px){.lt{display:none}.logo span{font-size:17px}}
 
-  .hero-visual{position:relative;display:flex;justify-content:center;}
-  .avatar-card{
-    position:relative;width:100%;max-width:340px;border-radius:24px;overflow:hidden;
-    background:linear-gradient(160deg,#1e1b4b,#312e81 55%,#4338ca);
-    aspect-ratio:4/5;display:flex;align-items:flex-end;justify-content:center;
-    box-shadow:0 30px 60px -20px rgba(30,27,75,.5);
-  }
-  .avatar-initials{
-    font-family:'Fraunces',serif;font-size:120px;color:rgba(255,255,255,.14);font-weight:600;
-    position:absolute;top:20px;right:14px;
-  }
-  .avatar-caption{
-    position:relative;margin:0 16px 16px;padding:14px 16px;border-radius:14px;
-    background:rgba(255,255,255,.12);backdrop-filter:blur(8px);color:#fff;width:calc(100% - 32px);
-  }
-  .avatar-caption strong{display:block;font-family:'Fraunces',serif;font-size:15px;}
-  .avatar-caption span{font-size:12.5px;color:#c7d2fe;}
-  .float-chip{
-    position:absolute;background:#fff;border-radius:12px;padding:8px 12px;font-size:12.5px;font-weight:600;
-    box-shadow:var(--shadow);display:flex;align-items:center;gap:6px;animation:float 4s ease-in-out infinite;
-  }
-  .chip-a{top:6%;left:-6%;animation-delay:.2s;}
-  .chip-b{top:38%;right:-10%;animation-delay:1s;}
-  .chip-c{bottom:8%;left:-10%;animation-delay:1.8s;}
-  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+/* hero */
+.hero{position:relative;padding-top:160px;padding-bottom:70px;overflow:hidden}
+#fx{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(440px circle at var(--gx,62%) var(--gy,45%),color-mix(in srgb,var(--ac) 16%,transparent),transparent 70%)}
+.hg{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.55fr);gap:30px;align-items:center}
+.hline{display:block;width:72px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--ac),var(--ac2));margin-bottom:26px}
+.hero h1{font-size:clamp(42px,6.4vw,84px);font-weight:800;letter-spacing:-.045em;line-height:1.02}
+.hero h1 span{display:block;animation:up 1s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 span+span{animation-delay:.12s}
+.hero h1 em{font-style:normal;color:var(--ac)}
+.role{font:700 clamp(20px,2.6vw,28px) var(--display);letter-spacing:-.02em;margin-top:22px;min-height:1.4em;color:var(--acdeep)}
+.caret{display:inline-block;width:2px;height:1em;background:var(--ac);margin-left:4px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero .lead{margin:14px 0 30px;max-width:46ch;animation:up 1s .25s cubic-bezier(.2,.8,.2,1) both}
+.hero .lead b{color:var(--ink);font-weight:700}
+@keyframes up{from{opacity:0;transform:translateY(40px);filter:blur(8px)}}
+.ha{display:flex;flex-direction:column;gap:30px;padding-left:20px}
+.ha small{display:block;font:700 12px var(--body);letter-spacing:.2em;margin-bottom:10px}
+.ha p{margin:0 0 12px;color:var(--mut);font-size:14.5px;line-height:1.6}
+.ha p b{color:var(--ink)}
+.lnk{position:relative;display:inline-block;padding-bottom:7px;font:600 12px var(--body);letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.lnk::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line)}
+.lnk::before{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--ac);z-index:1;transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.lnk:hover::before{width:100%}
+.lnk:hover{color:var(--acdeep)}
+.soc{display:flex;gap:10px}
+.soc a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--surf);display:grid;place-items:center;transition:transform .3s,background .3s,border-color .3s}
+.soc a:hover{background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--acink);border-color:transparent;transform:translateY(-4px)}
 
-  .marquee-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--mist);overflow:hidden;padding:16px 0;margin-top:56px;}
-  .marquee{display:flex;gap:56px;width:max-content;animation:scroll 22s linear infinite;font-size:14px;font-weight:600;color:var(--ink-soft);letter-spacing:.02em;}
-  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+/* marquee */
+.mq{overflow:hidden;white-space:nowrap;border-block:1px solid var(--line)}
+.mq>div{display:inline-block;animation:mq 40s linear infinite;padding-block:15px}
+.mq:hover>div{animation-play-state:paused}
+.mq span{font:700 22px var(--display);margin:0 24px;letter-spacing:-.01em}
+.mq span.d{color:var(--ac);margin:0}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-  /* SECTION shell */
-  section{padding:96px 0;}
-  .section-head{text-align:center;max-width:600px;margin:0 auto 56px;}
-  .eyebrow{
-    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
-    color:var(--indigo-2);background:#eef2ff;padding:6px 14px;border-radius:999px;margin-bottom:16px;
-  }
-  .section-head h2{font-size:36px;margin-bottom:12px;}
-  .section-head p{color:var(--ink-soft);font-size:16px;}
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
-  .reveal.in{opacity:1;transform:translateY(0);}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stats div{background:var(--surf);border:1px solid var(--line);border-radius:26px;padding:24px 20px;transition:transform .35s,border-color .3s,box-shadow .3s}
+.stats div:hover{transform:translateY(-6px);border-color:var(--ac);box-shadow:0 18px 40px -20px var(--ac)}
+.stats strong{display:block;font:800 clamp(30px,3.8vw,46px)/1 var(--display);letter-spacing:-.035em}
+.stats strong u{text-decoration:none;color:var(--ac)}
+.stats span{display:block;margin-top:10px;color:var(--mut);font-size:14px;line-height:1.45}
+.stats p{grid-column:1/-1;font:400 12px var(--mono);color:var(--mut)}
 
-  /* SERVICES */
-  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-  .card{
-    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;
-    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  }
-  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#dcdfea;}
-  .icon-badge{width:42px;height:42px;border-radius:11px;background:var(--amber-soft);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px;}
-  .card h3{font-size:16.5px;margin-bottom:6px;font-family:'Inter',sans-serif;font-weight:600;}
-  .card p{font-size:13.5px;color:var(--ink-soft);}
+/* brands */
+.brands{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px}
+.brands .bl{font:600 12px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-right:8px}
+.brands a,.brands>span:not(.bl){font:700 17px var(--display);letter-spacing:-.01em;text-decoration:none;padding:9px 18px;border:1px solid var(--line);border-radius:999px;background:var(--surf);transition:border-color .3s,transform .3s}
+.brands a:hover{border-color:var(--ac);transform:translateY(-3px)}
+.brands small{font:600 10px var(--mono);color:var(--acdeep);margin-left:4px;vertical-align:2px}
+.tl .at a{color:inherit}
+.tl ul b{color:var(--ink)}
 
-  /* PORTFOLIO */
-  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .proj-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper);transition:transform .25s ease, box-shadow .25s ease;}
-  .proj-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
-  .proj-thumb{aspect-ratio:16/10;background:linear-gradient(135deg,#eef2ff,#e0e7ff);display:flex;align-items:center;justify-content:center;color:#a5b4fc;font-size:13px;font-weight:600;letter-spacing:.03em;}
-  .proj-body{padding:20px;}
-  .proj-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-bottom:6px;display:block;}
-  .proj-body h3{font-size:17px;margin-bottom:6px;font-family:'Inter',sans-serif;font-weight:600;}
-  .proj-body p{font-size:13.5px;color:var(--ink-soft);margin-bottom:14px;}
-  .proj-stack{display:flex;gap:6px;flex-wrap:wrap;}
-  .pill{font-size:11px;background:var(--mist);border:1px solid var(--line);padding:4px 9px;border-radius:999px;color:var(--ink-soft);}
-  .note-inline{grid-column:1/-1;text-align:center;font-size:13px;color:var(--ink-soft);border:1px dashed var(--line);border-radius:12px;padding:16px;}
+/* about */
+.ab{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:56px;align-items:start}
+.phw{position:relative;max-width:100%}
+.ph{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:34px;overflow:hidden;background:radial-gradient(circle at 50% 28%,var(--ac2),var(--ac) 62%,#5c1d00);box-shadow:0 24px 60px -24px var(--ac);transition:transform .5s}
+.ph:hover{transform:rotate(-3deg) scale(1.03)}
+.ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.badge{position:absolute;right:-14px;bottom:-22px;width:38%;max-width:170px;aspect-ratio:1;border-radius:50%;overflow:hidden;border:5px solid var(--bg);box-shadow:0 18px 40px -16px rgba(0,0,0,.6);background:#111}
+.badge img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.ab .txt{display:grid;gap:18px}
+.ab .txt p{color:var(--mut);max-width:62ch}
+.ab .txt p b{color:var(--ink)}
 
-  /* EXPERIENCE */
-  .exp-wrap{max-width:760px;margin:0 auto;position:relative;padding-left:32px;}
-  .exp-wrap::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--line);}
-  .exp-item{position:relative;padding-bottom:36px;}
-  .exp-item::before{content:"";position:absolute;left:-32px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--indigo-2);border:3px solid #eef2ff;}
-  .exp-item .when{font-size:12.5px;color:var(--indigo-2);font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px;}
-  .exp-item h3{font-size:19px;margin-bottom:4px;}
-  .exp-item .role-meta{font-size:13.5px;color:var(--ink-soft);margin-bottom:10px;}
-  .exp-item p{font-size:14.5px;color:var(--ink-soft);}
+/* accordion: what I do */
+.acc{border-top:1px solid var(--ink)}
+.it{border-bottom:1px solid var(--line)}
+.rh{width:100%;display:flex;align-items:center;gap:clamp(14px,3vw,28px);background:none;border:0;padding:22px 0;text-align:left}
+.rh .n{font:700 clamp(17px,2.4vw,24px) var(--display);min-width:1.8em;color:var(--mut)}
+.rh .t{flex:1;font:700 clamp(21px,3.2vw,34px)/1.05 var(--display);letter-spacing:-.025em;transition:transform .4s,color .3s}
+.rh:hover .t{transform:translateX(12px);color:var(--acdeep)}
+.rh .pl{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;font-size:20px;line-height:1;transition:transform .4s,background .3s}
+.it.open .pl{transform:rotate(45deg);background:var(--ac);border-color:var(--ac);color:var(--acink)}
+.rb{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}
+.it.open .rb{grid-template-rows:1fr}
+.rb>div{overflow:hidden}
+.rbi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;padding:0 0 26px calc(1.8em + clamp(14px,3vw,28px))}
+.rbi p{color:var(--mut);max-width:52ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.chips span{border:1px solid var(--line);background:var(--surf);border-radius:99px;padding:7px 14px;font-size:14px}
 
-  /* SKILLS */
-  .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-  .skill-card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--paper);}
-  .skill-card h3{font-size:15px;margin-bottom:12px;display:flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-weight:600;}
-  .skill-card ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px;}
-  .skill-card li{font-size:12px;background:var(--mist);padding:5px 10px;border-radius:8px;color:var(--ink-soft);}
+/* live proof */
+.live{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:14px}
+.panel{background:var(--surf);border:1px solid var(--line);border-radius:28px;padding:24px;min-width:0}
+.ph2{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.ph2 h3{font-size:22px}
+.legend{display:flex;gap:16px;font:500 12px var(--mono);color:var(--mut)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.chart{width:100%;overflow-x:auto}
+.chart svg{display:block;width:100%;min-width:520px;height:auto}
+.mini{display:grid;gap:12px}
+.mini .panel{padding:20px}
+.mini small{font:600 11px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.mini strong{display:block;font:800 32px/1.1 var(--display);letter-spacing:-.03em;margin-top:6px}
+.mini p{color:var(--mut);font-size:14px;margin-top:4px}
+.mini p b{color:var(--ink)}
+.hl{background:linear-gradient(120deg,var(--ac),var(--ac2));border-color:transparent;color:var(--acink)}
+.hl small,.hl p,.hl p b{color:var(--acink)}
+.src{font:400 12px/1.5 var(--mono);color:var(--mut);margin-top:14px}
 
-  /* PROCESS */
-  .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .proc-card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:relative;background:var(--paper);}
-  .proc-num{font-family:'Fraunces',serif;font-size:34px;color:#e0e3ee;font-weight:600;position:absolute;top:16px;right:20px;}
-  .proc-card h3{font-size:16.5px;margin:26px 0 8px;font-family:'Inter',sans-serif;font-weight:600;}
-  .proc-card p{font-size:13.5px;color:var(--ink-soft);}
+/* case studies */
+.sth{display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap;justify-content:space-between;margin-bottom:20px}
+.sth small{display:block;font:600 11px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--acdeep);margin-bottom:8px}
+.sth h3{font-size:clamp(22px,2.8vw,32px);max-width:24ch}
+.tag{font:500 12px var(--mono);color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:8px 14px;white-space:nowrap;text-decoration:none}
+a.tag:hover{border-color:var(--ac);color:var(--ink)}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kp div{background:var(--surf2);border-radius:20px;padding:18px 16px}
+.kp strong{display:block;font:800 clamp(24px,3vw,36px)/1.05 var(--display);letter-spacing:-.03em}
+.kp div:first-child strong{color:var(--ac)}
+.kp span{display:block;font:500 12px var(--mono);color:var(--mut);margin-top:8px}
+.cs3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px}
+.cs3 h4{margin:0 0 6px;font:600 11px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.cs3 p{font-size:15px;line-height:1.6}
 
-  /* FAQ */
-  .faq-list{max-width:720px;margin:0 auto;}
-  .faq-item{border-bottom:1px solid var(--line);}
-  .faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 4px;font-size:15.5px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--ink);}
-  .faq-q .plus{transition:transform .25s ease;color:var(--indigo-2);font-size:18px;}
-  .faq-item.open .plus{transform:rotate(45deg);}
-  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:14px;color:var(--ink-soft);}
-  .faq-a-in{padding:0 4px 20px;}
+/* case study cards */
+.flt{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.flt button{border:1px solid var(--line);background:var(--surf);border-radius:999px;padding:8px 16px;font:600 13px var(--body);transition:border-color .3s,background .3s,color .3s}
+.flt button:hover{border-color:var(--ac)}
+.flt button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:16px}
+.cs{position:relative;display:flex;flex-direction:column;background:var(--surf);border:1px solid var(--line);border-radius:28px;overflow:hidden;min-width:0;transition:transform .35s,border-color .3s,box-shadow .3s}
+.cs:hover,.cs:focus-within{transform:translateY(-6px);border-color:var(--ac);box-shadow:0 22px 44px -24px var(--ac)}
+.cs-cv{position:relative;aspect-ratio:16/10;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:20px}
+.cs-cv strong{font:800 clamp(38px,5vw,54px)/1 var(--display);letter-spacing:-.04em}
+.cs-ml{font:500 13px var(--mono)}
+.cs-pill{position:absolute;left:16px;top:16px;font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.88);color:#0b0b0c}
+.c1{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#0b0b0c}
+.c2{background:#15151a;color:#ffb02e}
+.c2 .cs-ml{color:#e9e4dc}
+.c3{background:#fbeedd;color:var(--ac)}
+.c3 .cs-ml{color:#5b5852}
+.c1::after,.c2::after,.c3::after{content:"";position:absolute;right:-50px;top:-50px;width:190px;height:190px;border-radius:50%;border:26px solid currentColor;opacity:.1}
+.cs-img{padding:0;background:#fff}
+.cs-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:0 0}
+.cs-img .cs-pill{top:auto;bottom:14px}
+.cs-b{display:flex;flex-direction:column;gap:10px;padding:20px 22px 22px;flex:1}
+.cs-w{display:flex;align-items:center;gap:10px}
+.cs-w small{font:600 11px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--acdeep)}
+.live-dot{display:inline-flex;align-items:center;gap:6px;font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:#0b7a3b;background:color-mix(in srgb,#1fb25a 16%,transparent);padding:4px 10px;border-radius:999px}
+.live-dot i{width:7px;height:7px;border-radius:50%;background:#1fb25a;animation:blink 1.4s steps(1) infinite}
+.cs h3{font-size:clamp(20px,2.2vw,24px);line-height:1.12}
+.cs-s{color:var(--mut);font-size:15px;line-height:1.55}
+.cs-k{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+.cs-k strong{display:block;font:800 19px/1.1 var(--display);letter-spacing:-.02em}
+.cs-k span{display:block;font:500 11px/1.35 var(--mono);color:var(--mut);margin-top:4px}
+.cs-btn{position:static;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:6px;border:0;background:none;padding:0;font:600 14px var(--body);color:var(--ink)}
+.cs-btn span{transition:transform .3s}
+.cs:hover .cs-btn span{transform:translateX(5px)}
+.cs-btn::after{content:"";position:absolute;inset:0;z-index:1}
+.cs-btn:focus-visible{outline:none}
+.cs:focus-within{outline:3px solid var(--ac);outline-offset:3px}
 
-  /* CTA BAND */
-  .cta-band{
-    background:linear-gradient(120deg,var(--navy-deep),#1e1b4b 60%,#3730a3);
-    color:#fff;border-radius:28px;margin:0 24px;padding:64px 40px;text-align:center;
-    position:relative;overflow:hidden;
-  }
-  .cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(400px 200px at 20% 0%, rgba(245,158,11,.25), transparent 60%);}
-  .cta-band .badge{background:rgba(255,255,255,.12);color:#e0e7ff;}
-  .cta-band h2{font-size:34px;margin-bottom:14px;position:relative;}
-  .cta-band p{color:#c7d2fe;max-width:520px;margin:0 auto 30px;position:relative;font-size:15.5px;}
-  .cta-band .hero-ctas{justify-content:center;position:relative;}
-  .cta-band .btn-ghost{border-color:rgba(255,255,255,.3);color:#fff;}
-  .trust-row{display:flex;gap:26px;justify-content:center;margin-top:28px;font-size:12.5px;color:#a5b4fc;flex-wrap:wrap;position:relative;}
+.cmp{margin-top:24px}
+.cmp h4{margin:0 0 10px;font:600 11px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.cmp-s{overflow-x:auto}
+.cmp table{width:100%;border-collapse:collapse;font-size:15px}
+.cmp th,.cmp td{padding:11px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+.cmp th:first-child,.cmp td:first-child{text-align:left;padding-left:0}
+.cmp th{font:600 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.cmp td.up{font-weight:700;color:var(--acdeep)}
+.cmp td:first-child{white-space:normal;min-width:190px}
 
-  /* CONTACT */
-  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;}
-  .contact-info h3{font-size:15px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin-bottom:18px;}
-  .contact-info > p{font-size:14.5px;color:var(--ink-soft);margin-bottom:26px;}
-  .info-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px;}
-  .info-icon{width:38px;height:38px;border-radius:10px;background:var(--mist);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-  .info-row .label{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:#9aa1b5;}
-  .info-row .value{font-size:14.5px;font-weight:600;}
-  .social-row{display:flex;gap:10px;margin-top:22px;}
-  .social-row a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:border-color .2s, color .2s;}
-  .social-row a:hover{border-color:var(--indigo-2);color:var(--indigo-2);}
+/* case study dialog */
+.md{position:fixed;inset:0;z-index:85;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(8,8,9,.66);backdrop-filter:blur(6px)}
+.md-p{position:relative;width:min(900px,100%);max-height:100%;overflow:auto;background:var(--surf);border:1px solid var(--line);border-radius:30px;padding:30px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+.md-x{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--surf2);font-size:24px;line-height:1;display:grid;place-items:center;z-index:2}
+.md-x:hover{border-color:var(--ac)}
+.md-b .sth{padding-right:48px}
+.md-b .cs3{margin-top:22px}
 
-  form.contact-form{background:var(--mist);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
-  .form-row.full{grid-template-columns:1fr;}
-  label{font-size:12.5px;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:6px;}
-  input,select,textarea{
-    width:100%;padding:11px 13px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:14px;
-    font-family:inherit;color:var(--ink);
-  }
-  input:focus,select:focus,textarea:focus{outline:2px solid var(--indigo-2);outline-offset:1px;border-color:transparent;}
-  textarea{resize:vertical;min-height:100px;}
-  .submit-note{font-size:12px;color:#9aa1b5;margin-top:12px;text-align:center;}
+/* screenshots */
+.shot{margin:22px 0 0;display:grid;gap:8px;min-width:0}
+.shot img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
+.shot figcaption{font:500 12px var(--mono);color:var(--mut)}
 
-  footer.site{background:var(--navy-deep);color:#c7d2fe;padding:40px 0;}
-  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-  .footer-row .logo{color:#fff;}
-  .footer-links{display:flex;gap:22px;font-size:13.5px;}
-  .footer-links a:hover{color:#fff;}
-  .footer-bottom{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:12.5px;color:#7c85a3;text-align:center;}
+/* feed my fur */
+.ff{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:stretch}
+.ffl{background:var(--surf);border:1px solid var(--line);border-radius:34px;padding:clamp(26px,4vw,44px);display:grid;gap:18px;align-content:start}
+.ffl h2{font-size:clamp(32px,4.4vw,52px);font-weight:800;letter-spacing:-.035em}
+.ffl p{color:var(--mut)}
+.ffl p b{color:var(--ink)}
+.ffr{position:relative;border-radius:34px;overflow:hidden;background:linear-gradient(150deg,#ffe2c4,#ffb02e 48%,#ff6a1f);padding:26px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;color:#1b0f05;min-height:380px}
+.ffr .brow{display:flex;gap:6px}
+.ffr .brow i{width:10px;height:10px;border-radius:50%;background:rgba(27,15,5,.25)}
+.ffr .url{font:500 12px var(--mono);background:rgba(255,255,255,.55);border-radius:99px;padding:7px 14px;align-self:flex-start}
+.ffr h3{font:800 clamp(30px,4vw,46px)/1 var(--display);letter-spacing:-.04em}
+.ffr .tagl{font-size:16px;opacity:.85;margin-top:8px}
+.posts{display:grid;gap:8px}
+.posts div{background:rgba(255,255,255,.62);border-radius:16px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:600}
+.posts span{font:500 11px var(--mono);opacity:.7;white-space:nowrap}
+.paw{position:absolute;right:-18px;top:46px;font-size:150px;line-height:1;opacity:.14;transform:rotate(18deg);pointer-events:none}
 
-  @media(max-width:980px){
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-visual{order:-1;max-width:280px;margin:0 auto;}
-    .services-grid,.skills-grid{grid-template-columns:repeat(2,1fr);}
-    .portfolio-grid,.process-grid{grid-template-columns:1fr 1fr;}
-    .contact-grid{grid-template-columns:1fr;}
-    .nav-links{display:none;}
-    .menu-toggle{display:block;}
-    h1.hero-title{font-size:40px;}
-  }
-  @media(max-width:600px){
-    .services-grid,.skills-grid,.portfolio-grid,.process-grid,.form-row{grid-template-columns:1fr;}
-    .stats-row{grid-template-columns:repeat(2,1fr);}
-    .stat:nth-child(2){border-right:none;}
-    h1.hero-title{font-size:32px;}
-    .cta-band{margin:0 12px;padding:44px 22px;}
-  }
+/* timeline */
+.tl{display:grid;grid-template-columns:clamp(110px,18vw,190px) minmax(0,1fr);gap:22px;padding-block:28px;border-bottom:1px solid var(--line)}
+.tlw .tl:first-child{border-top:1px solid var(--ink)}
+.tl>span{font:600 14px/1.5 var(--body);color:var(--mut);padding-top:6px}
+.tl h3{font-size:clamp(21px,2.6vw,28px);margin-bottom:4px}
+.tl .at{color:var(--acdeep);font-weight:600;font-size:15px;margin-bottom:12px}
+.tl ul{margin:0;padding-left:18px;color:var(--mut);display:grid;gap:6px;max-width:66ch}
+
+/* stack */
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sk{background:var(--surf);border:1px solid var(--line);border-radius:24px;padding:22px;transition:transform .35s,border-color .3s}
+.sk:hover{transform:translateY(-6px);border-color:var(--ac)}
+.sk h3{font:600 11px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--acdeep);margin-bottom:12px}
+.sk ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:15px}
+.tg2{font:600 12px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin:38px 0 12px}
+.cp{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:10px 20px;margin:0 8px 10px 0;font-size:15px;background:var(--surf);transition:border-color .3s,transform .3s}
+.cp:hover{border-color:var(--ac);transform:translateY(-3px)}
+.cp small{color:var(--mut);margin-left:6px;font-size:13px}
+
+/* bridge */
+.br{border-radius:38px;padding:clamp(28px,5vw,64px);background:var(--surf);border:1px solid var(--line);position:relative;overflow:hidden}
+.br::before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff3dc,var(--ac2) 35%,var(--ac) 70%);opacity:.9;filter:blur(2px)}
+.br>*{position:relative}
+.br h2{font-size:clamp(30px,4.6vw,56px);font-weight:800;max-width:17ch;margin-bottom:14px;letter-spacing:-.035em}
+.br>p{color:var(--mut);max-width:56ch;margin-bottom:28px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:30px}
+.steps div{background:var(--surf2);border:1px solid var(--line);border-radius:22px;padding:18px}
+.steps span{font:800 30px var(--display);color:var(--ac)}
+.steps b{display:block;font:700 19px var(--display);margin:4px 0 6px}
+.steps p{font-size:14px;color:var(--mut);line-height:1.55}
+
+/* contact */
+.ct{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}
+.ci{background:var(--surf);border:1px solid var(--line);border-radius:24px;padding:20px;display:grid;gap:10px;min-width:0}
+.ci small{font:600 11px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.ci .v{font:600 17px var(--body);overflow-wrap:anywhere;user-select:all}
+.ci .acts{display:flex;gap:8px;flex-wrap:wrap}
+.mini-b{border:1px solid var(--line);background:transparent;border-radius:999px;padding:7px 14px;font:500 12px var(--mono);text-decoration:none;color:var(--mut);transition:border-color .3s,color .3s}
+.mini-b:hover{border-color:var(--ac);color:var(--ink)}
+footer{padding-block:28px 110px;border-top:1px solid var(--line);color:var(--mut);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.fab{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;box-shadow:0 10px 34px -8px var(--ac)}
+
+/* cursor */
+#cd,#cr{position:fixed;left:0;top:0;pointer-events:none;display:none;border-radius:50%;z-index:90}
+#cd{width:8px;height:8px;background:var(--ac)}
+#cr{width:38px;height:38px;border:1.5px solid var(--ac);transition:width .3s,height .3s,background .3s}
+#cr.hv{width:62px;height:62px;background:color-mix(in srgb,var(--ac) 16%,transparent)}
+html.cur,html.cur *{cursor:none!important}
+html.cur #cd,html.cur #cr{display:block}
+
+@media(max-width:960px){
+  .hg,.ab,.live,.ff{grid-template-columns:1fr}
+  .ha{padding-left:0;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .ha>div:last-child{grid-column:1/-1}
+  .stats,.kp,.sg,.steps,.ct{grid-template-columns:repeat(2,1fr)}
+  .cs3,.rbi{grid-template-columns:1fr;gap:14px}
+  .rbi{padding-left:0}
+  .phw{max-width:340px;margin-bottom:22px}
+}
+@media(max-width:560px){
+  section{padding-block:62px}
+  .hero{padding-top:180px}
+  .ha,.sg,.steps,.ct{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr;gap:6px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.mesh{display:none}}
 </style>
+
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
 </head>
 <body>
+<div class="mesh" aria-hidden="true"></div>
+<div id="sp" aria-hidden="true"></div>
+<div id="cd" aria-hidden="true"></div><div id="cr" aria-hidden="true"></div>
 
-<header class="site">
-  <nav class="wrap">
-    <div class="logo"><span class="dot"></span>Bodh Raj</div>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#process">Process</a>
-      <a href="#faq">FAQ</a>
+<nav aria-label="Main">
+  <a class="logo" href="#top"><img src="bodh-raj-avatar.webp" alt="" width="42" height="42"><span>Bodh Raj</span></a>
+  <div class="links">
+    <a href="#about">About</a><a href="#services">What I Do</a><a href="#live">Digi Maniac</a><a href="#work">Case Studies</a><a href="#blog">Blog</a><a href="#path">Experience</a><a href="#contact">Contact</a>
+  </div>
+  <div class="nr">
+    <button id="theme" role="switch" aria-checked="false" aria-label="Dark mode"><span class="k" aria-hidden="true">&#9728;</span></button>
+    <a class="lt" href="#contact">Let's Talk <span aria-hidden="true">&#8594;</span></a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="wrap hg">
+    <div>
+      <i class="hline"></i>
+      <h1><span>I'm <em>Bodh Raj,</em></span><span>a Complete Digital Marketer</span></h1>
+      <div class="role"><span id="tye">SEO specialist</span><i class="caret" aria-hidden="true"></i></div>
+      <p class="lead">I run <b>Meta &amp; Google Ads</b>, rank websites with <b>SEO</b>, build sites on <b>WordPress, Shopify &amp; Wix</b>, and train students to do the same at <b>Digi Maniac</b>.</p>
+      <div class="row"><a class="sdn" href="#numbers" aria-label="Scroll to results">&#8595;</a><a class="btn pri" href="#work">See my results</a></div>
     </div>
-    <div class="nav-cta">
-      <a class="btn btn-primary" href="#contact">Hire Me</a>
-      <button class="menu-toggle" aria-label="Menu">☰</button>
+    <div class="ha">
+      <div><small>ABOUT ME</small><p>Marketing lead and trainer at Digi Maniac, with <b>5+ years</b> in ads, SEO and web, including US clients.</p><a class="lnk" href="#about">Learn more &#8594;</a></div>
+      <div><small>LIVE RESULTS</small><p>&#8377;3.84 L spend and 3,495 leads for Digi Maniac, July to October 2026.</p><a class="lnk" href="#live">See the data &#8594;</a></div>
+      <div><small>FOLLOW ME</small><div class="soc">
+        <a href="https://www.linkedin.com/in/braj-user/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.85h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.3h-4z"/></svg></a>
+        <a href="https://wa.me/917018439223" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-4.9A9 9 0 1 1 8 19.4z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-2-1-.9.8a4 4 0 0 1-1.9-1.9l.8-.9-1-2z"/></svg></a>
+        <a href="https://marketingwithraj.com" target="_blank" rel="noopener" aria-label="Website"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg></a>
+        <a href="https://feedmyfur.com/" target="_blank" rel="noopener" aria-label="Feed My Fur blog"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><circle cx="7" cy="9" r="2"/><circle cx="12" cy="6.5" r="2"/><circle cx="17" cy="9" r="2"/><path d="M12 11c-3 0-5.5 3.5-5.5 6 0 1.6 1.3 2.5 2.8 2.2 1-.2 1.8-.6 2.7-.6s1.7.4 2.7.6c1.5.3 2.8-.6 2.8-2.2 0-2.5-2.5-6-5.5-6z"/></svg></a>
+      </div></div>
     </div>
-  </nav>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="badge"><span class="pulse"></span> Available for new projects</div>
-      <div class="eyebrow-line">Project Manager · Front-End Developer · 3+ Years</div>
-      <h1 class="hero-title">I'm <span class="accent">Bodh Raj</span></h1>
-      <p class="hero-sub">I plan, build and ship websites — leading projects end-to-end on WordPress, Shopify, Wix, Webflow and Squarespace, while writing the front-end code that brings each design to life.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="#contact">Hire Me</a>
-        <a class="btn btn-ghost" href="#projects">View Portfolio</a>
-      </div>
-      <div class="stats-row" id="statsRow">
-        <div class="stat"><div class="num" data-count="35">0</div><div class="label">Projects</div></div>
-        <div class="stat"><div class="num" data-count="20">0</div><div class="label">Clients</div></div>
-        <div class="stat"><div class="num" data-count="98">0</div><div class="label">Satisfaction %</div></div>
-        <div class="stat"><div class="num" data-count="3">0</div><div class="label">Years Exp</div></div>
-      </div>
+<div class="mq" aria-hidden="true"><div>
+  <span>Meta Ads</span><span class="d">&#10039;</span><span>Google Ads</span><span class="d">&#10039;</span><span>Snapchat Ads</span><span class="d">&#10039;</span><span>SEO</span><span class="d">&#10039;</span><span>GA4</span><span class="d">&#10039;</span><span>Tag Manager</span><span class="d">&#10039;</span><span>WordPress</span><span class="d">&#10039;</span><span>Elementor</span><span class="d">&#10039;</span><span>Shopify</span><span class="d">&#10039;</span><span>Wix</span><span class="d">&#10039;</span><span>Search Console</span><span class="d">&#10039;</span><span>Zoho CRM</span><span class="d">&#10039;</span><span>AiSensy</span><span class="d">&#10039;</span><span>Zapier</span><span class="d">&#10039;</span><span>ChatGPT</span><span class="d">&#10039;</span><span>Claude</span><span class="d">&#10039;</span><span>Lovable</span><span class="d">&#10039;</span>
+  <span>Meta Ads</span><span class="d">&#10039;</span><span>Google Ads</span><span class="d">&#10039;</span><span>Snapchat Ads</span><span class="d">&#10039;</span><span>SEO</span><span class="d">&#10039;</span><span>GA4</span><span class="d">&#10039;</span><span>Tag Manager</span><span class="d">&#10039;</span><span>WordPress</span><span class="d">&#10039;</span><span>Elementor</span><span class="d">&#10039;</span><span>Shopify</span><span class="d">&#10039;</span><span>Wix</span><span class="d">&#10039;</span><span>Search Console</span><span class="d">&#10039;</span><span>Zoho CRM</span><span class="d">&#10039;</span><span>AiSensy</span><span class="d">&#10039;</span><span>Zapier</span><span class="d">&#10039;</span><span>ChatGPT</span><span class="d">&#10039;</span><span>Claude</span><span class="d">&#10039;</span><span>Lovable</span><span class="d">&#10039;</span>
+</div></div>
+
+<section id="numbers" style="padding-bottom:20px">
+  <div class="wrap">
+    <div class="stats">
+      <div><strong class="num">&#8377;2 Cr<u>+</u></strong><span>Ad spend managed across Meta and Google</span></div>
+      <div><strong class="num" data-n="55000" data-s="+" data-f="1">55,000+</strong><span>Leads generated for brands and institutes</span></div>
+      <div><strong class="num">3.3 L<u>+</u></strong><span>Website purchases driven for an e-commerce brand</span></div>
+      <div><strong class="num" data-n="500" data-s="+">500+</strong><span>Students trained in digital marketing</span></div>
+      <p>Totals from Meta &amp; Google Ads dashboards across four accounts, 2022&ndash;2026.</p>
     </div>
-    <div class="hero-visual">
-      <div class="avatar-card">
-        <div class="avatar-initials">BR</div>
-        <div class="avatar-caption">
-          <strong>Bodh Raj</strong>
-          <span>Project Manager · Front-End Dev</span>
+    <div class="brands">
+      <span class="bl">Brands &amp; teams I've worked with</span>
+      <a href="https://digimaniac.in" target="_blank" rel="noopener">Digi Maniac</a><a href="https://9cork.com/" target="_blank" rel="noopener">9Cork</a><a href="https://www.instagram.com/zvezdaluxurysalon07/" target="_blank" rel="noopener">Zvezda Hair Salon</a><a href="https://yogableshop.com/" target="_blank" rel="noopener">Yogable <small>US</small></a><a href="https://streetstylestore.com" target="_blank" rel="noopener">StreetStyleStore</a><a href="https://www.graciousmarketing.com/" target="_blank" rel="noopener">Gracious Marketing <small>NY</small></a><span>Websoftrix Infotech</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap ab">
+    <div class="phw">
+      <div class="ph"><img src="bodh-raj-desk.webp" alt="Bodh Raj in a black suit and navy tie, working at his laptop" width="800" height="1000"></div>
+      <div class="badge"><img src="bodh-raj-portrait.webp" alt="Bodh Raj smiling in a black t-shirt" width="700" height="745" loading="lazy"></div>
+    </div>
+    <div class="txt">
+      <div class="eyebrow">About</div>
+      <h2 class="big">Hello, I'm <em>Bodh Raj.</em></h2>
+      <p>I studied <b>BA Economics</b> and fell for the part of marketing you can measure. I started as an <b>SEO executive at Websoftrix Infotech</b> and grew into <b>Digital Marketing Manager and Team Lead</b>, and delivered SEO, Google Ads and web work for the US clients of a New York agency.</p>
+      <p>Along the way I built websites on <b>WordPress, Shopify, Wix</b> and other platforms, and moved deep into <b>paid ads</b>. As a freelancer I now run marketing for <b>9Cork</b>, a B2B cork brand, and <b>Yogable</b>, a US yoga e-commerce brand.</p>
+      <p>Today I lead performance marketing at <b>Digi Maniac</b> in Kurukshetra, train students on the same playbook, and run my own pet blog, <b>Feed My Fur</b>, on the side.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="padding-top:20px">
+  <div class="wrap">
+    <h2 class="big out">What I do</h2>
+    <div class="acc">
+      <div class="it open"><button class="rh" aria-expanded="true"><span class="n">01</span><span class="t">Performance Marketing</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Meta, Google and Snapchat Ads campaigns built for leads, sales and admissions, with weekly testing to lower cost per lead and raise ROAS.</p>
+        <div class="chips"><span>Meta Ads</span><span>Google Ads</span><span>Snapchat Ads</span><span>Performance Max</span><span>Lead forms</span><span>WhatsApp ads</span><span>Catalog ads</span><span>Retargeting</span></div>
+      </div></div></div></div>
+      <div class="it"><button class="rh" aria-expanded="false"><span class="n">02</span><span class="t">SEO</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Where I started. Technical audits, on-page fixes, keyword research and content plans, today for 9Cork's B2B sites, plus Reddit SEO for Yogable in the US.</p>
+        <div class="chips"><span>Technical SEO</span><span>On-page SEO</span><span>Keyword research</span><span>Search Console</span><span>Reddit SEO</span><span>B2B SEO</span><span>AI Overviews</span></div>
+      </div></div></div></div>
+      <div class="it"><button class="rh" aria-expanded="false"><span class="n">03</span><span class="t">Website Development</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Business websites, online stores and landing pages built on the CMS that fits the client, fast to load and ready for SEO and ads tracking.</p>
+        <div class="chips"><span>WordPress</span><span>Elementor</span><span>Shopify</span><span>Wix</span><span>Landing pages</span><span>AI website builders</span></div>
+      </div></div></div></div>
+      <div class="it"><button class="rh" aria-expanded="false"><span class="n">04</span><span class="t">Tracking &amp; Automation</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Every lead and sale tracked, and every enquiry followed up automatically on WhatsApp and in the CRM.</p>
+        <div class="chips"><span>GA4</span><span>Google Tag Manager</span><span>Conversion tracking</span><span>Zoho CRM</span><span>AiSensy</span><span>Zapier</span></div>
+      </div></div></div></div>
+      <div class="it"><button class="rh" aria-expanded="false"><span class="n">05</span><span class="t">Social Media Marketing</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Organic and paid social for brands and local businesses: content plans, reels and posts that match the audience, and community replies that keep people coming back.</p>
+        <div class="chips"><span>Instagram</span><span>Facebook</span><span>LinkedIn</span><span>Content calendars</span><span>Reels strategy</span><span>Community management</span><span>Paid + organic</span></div>
+      </div></div></div></div>
+      <div class="it"><button class="rh" aria-expanded="false"><span class="n">06</span><span class="t">YouTube Marketing</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Channel setup, video SEO and ads that bring in the right viewers, so videos keep working long after they are published.</p>
+        <div class="chips"><span>Channel setup</span><span>Video SEO</span><span>Titles &amp; thumbnails</span><span>Shorts</span><span>YouTube Ads</span><span>Analytics</span></div>
+      </div></div></div></div>
+      <div class="it"><button class="rh" aria-expanded="false"><span class="n">07</span><span class="t">WhatsApp Marketing</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Click-to-WhatsApp ads, instant auto-replies and broadcast campaigns, so every enquiry gets an answer in seconds and a follow-up after that.</p>
+        <div class="chips"><span>WhatsApp ads</span><span>Auto-replies</span><span>Broadcasts</span><span>AiSensy</span><span>CRM follow-up</span><span>Lead nurturing</span></div>
+      </div></div></div></div>
+      <div class="it"><button class="rh" aria-expanded="false"><span class="n">08</span><span class="t">Email Marketing</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Newsletters and automated email sequences that welcome new leads, nurture them and bring past customers back.</p>
+        <div class="chips"><span>Newsletters</span><span>Welcome sequences</span><span>Lead nurturing</span><span>Segmentation</span><span>Automation</span></div>
+      </div></div></div></div>
+      <div class="it"><button class="rh" aria-expanded="false"><span class="n">09</span><span class="t">Affiliate Marketing</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Choosing offers, building the landing pages and content that promote them, and tracking every click so it is clear what earns.</p>
+        <div class="chips"><span>Offer research</span><span>Affiliate funnels</span><span>Landing pages</span><span>Content-led promotion</span><span>Link tracking</span></div>
+      </div></div></div></div>
+      <div class="it"><button class="rh" aria-expanded="false"><span class="n">10</span><span class="t">Dropshipping &amp; Shopify Stores</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Shopify website development for dropshipping and e-commerce brands: store setup, product pages, payments and checkout, then Meta Ads and SEO to bring in buyers.</p>
+        <div class="chips"><span>Shopify development</span><span>Store setup</span><span>Product research</span><span>Checkout &amp; payments</span><span>Catalog ads</span><span>Store SEO</span></div>
+      </div></div></div></div>
+      <div class="it"><button class="rh" aria-expanded="false"><span class="n">11</span><span class="t">AI Video Editing</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Short videos for ads, reels and YouTube, edited fast with AI tools: captions, voiceovers and quick cuts, plus long videos repurposed into many short clips.</p>
+        <div class="chips"><span>Reels &amp; Shorts</span><span>Ad creatives</span><span>AI captions</span><span>AI voiceovers</span><span>Repurposing long videos</span></div>
+      </div></div></div></div>
+      <div class="it"><button class="rh" aria-expanded="false"><span class="n">12</span><span class="t">Training &amp; Workshops</span><span class="pl" aria-hidden="true">+</span></button><div class="rb"><div><div class="rbi">
+        <p>Hands-on classes and weekly workshops at Digi Maniac, built around real campaigns, real dashboards and portfolio projects.</p>
+        <div class="chips"><span>500+ students</span><span>Weekly workshops</span><span>Interview prep</span><span>Portfolio mentoring</span></div>
+      </div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="live">
+  <div class="wrap">
+    <div class="eyebrow">Live account &middot; Digi Maniac</div>
+    <h2 class="big">What I'm running <span class="out">right now.</span></h2>
+    <p class="lead" style="margin-bottom:34px">Student-admission campaigns for Digi Maniac across Haryana, straight from the Meta ad account, July to October 2026.</p>
+    <div class="live">
+      <div class="panel">
+        <div class="ph2"><h3>Monthly spend &amp; leads</h3>
+          <div class="legend"><span><i style="background:var(--ac)"></i>Spend (&#8377;)</span><span><i style="background:var(--p3)"></i>Leads</span></div>
         </div>
-        <div class="float-chip chip-a">🟦 WordPress</div>
-        <div class="float-chip chip-b">🛍️ Shopify</div>
-        <div class="float-chip chip-c">🌐 Webflow</div>
+        <div class="chart" id="chart" role="img" aria-label="Spend rose from ₹72,045 in July to ₹1,13,184 in October 2026. Leads were 559, 1,494, 762 and 680."></div>
+        <p class="src">Source: Meta Ads Manager. October counted to the 28th.</p>
       </div>
-    </div>
-  </div>
-  <div class="marquee-wrap">
-    <div class="marquee" id="marquee">
-      <span>WordPress</span><span>Shopify</span><span>Wix</span><span>Webflow</span><span>Squarespace</span><span>HTML/CSS/JS</span>
-      <span>WordPress</span><span>Shopify</span><span>Wix</span><span>Webflow</span><span>Squarespace</span><span>HTML/CSS/JS</span>
+      <div class="mini">
+        <div class="panel"><small>Spend, Jul&ndash;Oct</small><strong class="num">&#8377;3.84 L</strong><p>Scaled from &#8377;72K to &#8377;1.13 L a month.</p></div>
+        <div class="panel"><small>Leads</small><strong class="num">3,495</strong><p>Instant-form leads into Zoho CRM.</p></div>
+        <div class="panel"><small>Impressions</small><strong class="num">1.7 Cr+</strong><p>Across six Haryana cities.</p></div>
+        <div class="panel hl"><small>Workshop campaign</small><strong class="num">3,766 sign-ups</strong><p>At <b>&#8377;0.83</b> each. Many of you found this workshop through an ad like it.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="services">
+<section id="work">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Services</span>
-      <h2>What I <span class="accent">Deliver</span></h2>
-      <p>From project kickoff to launch day — planning, building and shipping websites that work.</p>
+    <div class="eyebrow">Case studies</div>
+    <h2 class="big">Campaigns, <em>broken down.</em></h2>
+    <p class="lead" style="margin-bottom:28px">Eight case studies. Open a card for the goal, what I did and what the numbers said.</p>
+    <div class="flt" role="group" aria-label="Filter case studies">
+      <button type="button" data-f="all" aria-pressed="true">All</button><button type="button" data-f="meta" aria-pressed="false">Meta Ads</button><button type="button" data-f="google" aria-pressed="false">Google Ads</button><button type="button" data-f="seo" aria-pressed="false">SEO</button><button type="button" data-f="whatsapp" aria-pressed="false">WhatsApp</button>
     </div>
-    <div class="services-grid">
-      <div class="card reveal"><div class="icon-badge">🗂️</div><h3>Project Management</h3><p>Scoping, timelines and delivery — keeping every project on track and on budget.</p></div>
-      <div class="card reveal"><div class="icon-badge">🟦</div><h3>WordPress Development</h3><p>Custom themes, page builders, plugin configuration and site maintenance.</p></div>
-      <div class="card reveal"><div class="icon-badge">🛍️</div><h3>Shopify Development</h3><p>Theme customization, Liquid edits and storefront setup for eCommerce.</p></div>
-      <div class="card reveal"><div class="icon-badge">🌐</div><h3>Webflow & Wix</h3><p>Visual builds with clean structure, responsive layouts and CMS collections.</p></div>
-      <div class="card reveal"><div class="icon-badge">🧩</div><h3>Squarespace Sites</h3><p>Fast, polished sites for portfolios, small business and service brands.</p></div>
-      <div class="card reveal"><div class="icon-badge">💬</div><h3>Client Communication</h3><p>Clear updates, honest timelines and a single point of contact throughout.</p></div>
-      <div class="card reveal"><div class="icon-badge">⚡</div><h3>Speed & QA</h3><p>Performance checks and cross-browser testing before every launch.</p></div>
-      <div class="card reveal"><div class="icon-badge">📐</div><h3>Front-End Builds</h3><p>Hand-coded HTML, CSS and JS for custom sections and interactions.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="projects" style="background:var(--mist);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Portfolio</span>
-      <h2>Selected <span class="accent">Work</span></h2>
-      <p>A few placeholder slots below — swap these with your real projects and links.</p>
-    </div>
-    <div class="portfolio-grid">
-      <div class="proj-card reveal">
-        <div class="proj-thumb">Project Screenshot</div>
-        <div class="proj-body">
-          <span class="proj-tag">WordPress</span>
-          <h3>Project Name One</h3>
-          <p>Short one-line description of the site and what you did on it.</p>
-          <div class="proj-stack"><span class="pill">WordPress</span><span class="pill">Elementor</span></div>
-        </div>
-      </div>
-      <div class="proj-card reveal">
-        <div class="proj-thumb">Project Screenshot</div>
-        <div class="proj-body">
-          <span class="proj-tag">Shopify</span>
-          <h3>Project Name Two</h3>
-          <p>Short one-line description of the store and results achieved.</p>
-          <div class="proj-stack"><span class="pill">Shopify</span><span class="pill">Liquid</span></div>
-        </div>
-      </div>
-      <div class="proj-card reveal">
-        <div class="proj-thumb">Project Screenshot</div>
-        <div class="proj-body">
-          <span class="proj-tag">Webflow</span>
-          <h3>Project Name Three</h3>
-          <p>Short one-line description of the build and your role in it.</p>
-          <div class="proj-stack"><span class="pill">Webflow</span><span class="pill">CMS</span></div>
-        </div>
-      </div>
-      <div class="note-inline reveal">Add 3–6 real projects here with screenshots, live links and results once you share them.</div>
+    <div class="cs-grid">
+      <article class="cs" data-tags="meta"><div class="cs-cv cs-img"><img src="skills-cover.webp" alt="" loading="lazy" width="645" height="400"><span class="cs-pill">Meta Ads</span></div><div class="cs-b"><div class="cs-w"><small>2023&ndash;2026</small></div><h3>Online skills lead campaigns for a girls-focused family brand</h3><p class="cs-s">Quality leads for an online skills brand, at the lowest cost.</p><div class="cs-k"><div><strong class="num">52,500+</strong><span>Leads</span></div><div><strong class="num">&#8377;8.58</strong><span>Avg. cost per lead</span></div><div><strong class="num">&#8377;4.5 L+</strong><span>Spend</span></div></div><button type="button" class="cs-btn" aria-haspopup="dialog">Read the breakdown<span aria-hidden="true">&#8594;</span></button></div><div class="cs-d" hidden><div class="sth"><div><small>Meta Ads &middot; 2023&ndash;2026</small><h3>Online skills lead campaigns for a girls-focused family brand</h3></div><div class="row"><span class="tag">Pan-India &middot; 18&ndash;35</span></div></div><div class="kp"><div><strong class="num">52,500+</strong><span>Leads</span></div><div><strong class="num">&#8377;8.58</strong><span>Avg. cost per lead</span></div><div><strong class="num">&#8377;4.5 L+</strong><span>Spend</span></div><div><strong class="num">60+</strong><span>Campaigns</span></div></div><div class="cs3"><div><h4>Goal</h4><p>Quality leads from girls and young women who want an online skill they can learn from home, at the lowest cost.</p></div><div><h4>What I did</h4><p>Hindi-first creatives, instant lead forms, fresh creatives every month and budget moved weekly to the best ad sets.</p></div><div><h4>What I learned</h4><p>Persona-led creatives won. One campaign brought <b>26,945 leads at &#8377;8.76</b>. Old creatives drifted to &#8377;35&ndash;58.</p></div></div><figure class="shot"><img src="skills-2.webp" alt="Meta Ads Manager campaigns table showing a lead campaign with 26,945 leads at 8.76 rupees per lead and 2,36,153 rupees spent" width="1770" height="503" loading="lazy"><figcaption>Top campaign: 26,945 leads at &#8377;8.76 each, on &#8377;2.36 L spend</figcaption></figure><figure class="shot"><img src="skills-1.webp" alt="Meta Ads Manager showing live lead campaigns from March to June 2026, including 3,440 leads at 7.86 rupees per lead" width="1548" height="465" loading="lazy"><figcaption>Running now: lead campaigns from March to June 2026</figcaption></figure><figure class="shot"><img src="skills-3.webp" alt="Meta Ads Manager showing lead campaigns from November 2025 to January 2026, including 5,485 leads at 7.48 rupees per lead" width="1778" height="516" loading="lazy"><figcaption>Winter 2025&ndash;26 campaigns: &#8377;7.48&ndash;&#8377;16.26 per lead on the main ad sets</figcaption></figure><p class="src">Source: Meta Ads Manager, account lifetime view (7 Jun 2023 &ndash; 7 Jul 2026).</p></div></article>
+      <article class="cs" data-tags="seo meta"><div class="cs-cv c2"><span class="cs-pill">SEO + Meta Ads</span><strong class="num">3,32,826</strong><span class="cs-ml">website purchases</span></div><div class="cs-b"><div class="cs-w"><small>2022&ndash;2025</small></div><h3>3-year growth for StreetStyleStore, a fast-fashion store</h3><p class="cs-s">SEO first, then paid ads on top, for an e-commerce store.</p><div class="cs-k"><div><strong class="num">3,32,826</strong><span>Website purchases</span></div><div><strong class="num">17.2x</strong><span>Avg. purchase ROAS</span></div><div><strong class="num">&#8377;2.1 Cr+</strong><span>Ad spend (snapshot)</span></div></div><button type="button" class="cs-btn" aria-haspopup="dialog">Read the breakdown<span aria-hidden="true">&#8594;</span></button></div><div class="cs-d" hidden><div class="sth"><div><small>SEO + Meta Ads &middot; 2022&ndash;2025</small><h3>3-year growth for StreetStyleStore, a fast-fashion store</h3></div><div class="row"><a class="tag" href="https://streetstylestore.com" target="_blank" rel="noopener">streetstylestore.com &#8599;</a></div></div><div class="kp"><div><strong class="num">3,32,826</strong><span>Website purchases</span></div><div><strong class="num">17.2x</strong><span>Avg. purchase ROAS</span></div><div><strong class="num">&#8377;2.1 Cr+</strong><span>Ad spend (snapshot)</span></div><div><strong class="num">175+</strong><span>Campaigns</span></div></div><div class="cs3"><div><h4>Goal</h4><p>Build organic visibility first, then scale paid ads on top of it for efficient, long-term growth.</p></div><div><h4>What I did</h4><p>Year 1: site audit, technical and on-page SEO. Years 2&ndash;3: catalog, conversion and ABO/CBO campaigns across categories.</p></div><div><h4>What I learned</h4><p>Multi-category catalog ads beat single-category ones, and the SEO base made every paid rupee work harder.</p></div></div></div></article>
+      <article class="cs" data-tags="google"><div class="cs-cv c3"><span class="cs-pill">Google Ads &middot; US</span><strong class="num">3.9x</strong><span class="cs-ml">monthly sales: $2,979 to $11,618</span></div><div class="cs-b"><div class="cs-w"><small>US market &middot; 2026</small></div><h3>88% cheaper clicks and 3.9x monthly sales for Yogable</h3><p class="cs-s">Cheaper clicks on a new US account, then monthly store sales up 3.9x.</p><div class="cs-k"><div><strong class="num">3.9x</strong><span>Total sales, April vs March</span></div><div><strong class="num">88%</strong><span>Cost per click reduced</span></div><div><strong class="num">$0.13</strong><span>Avg. CPC (was $1.10)</span></div></div><button type="button" class="cs-btn" aria-haspopup="dialog">Read the breakdown<span aria-hidden="true">&#8594;</span></button></div><div class="cs-d" hidden><div class="sth"><div><small>Google Ads &middot; Shopify store &middot; US market &middot; 2026</small><h3>88% cheaper clicks and 3.9x monthly sales for Yogable</h3></div><div class="row"><a class="tag" href="https://yogableshop.com" target="_blank" rel="noopener">yogableshop.com &#8599;</a><a class="tag" href="https://www.instagram.com/yogablecollection/" target="_blank" rel="noopener">Instagram &#8599;</a></div></div><div class="kp"><div><strong class="num">3.9x</strong><span>Total sales, April vs March</span></div><div><strong class="num">88%</strong><span>Cost per click reduced</span></div><div><strong class="num">$0.13</strong><span>Avg. CPC (was $1.10)</span></div><div><strong class="num">64</strong><span>April orders (March: 25)</span></div></div><div class="cs3"><div><h4>Goal</h4><p>Launch a new Google Ads account for an eco-friendly cork yoga brand and drive cheap, relevant traffic.</p></div><div><h4>What I did</h4><p>Maximize Clicks for early learning, then tightened keywords, search terms and placements as data came in.</p></div><div><h4>What I learned</h4><p>Fast keyword iteration in the first weeks beats set-and-forget. Same budget, eight times the traffic. Store sales then reached <b>$11.6K in April, up from $3.0K in March</b>.</p></div></div><div class="cmp"><h4>Store sales, April vs March 2026</h4><div class="cmp-s"><table><thead><tr><th>Metric</th><th>March</th><th>April</th><th>Change</th></tr></thead><tbody><tr><td>Total sales</td><td class="num">$2,979.41</td><td class="num">$11,617.61</td><td class="num up">3.9x</td></tr><tr><td>Net sales</td><td class="num">$2,859.79</td><td class="num">$11,124.32</td><td class="num up">3.9x</td></tr><tr><td>Orders</td><td class="num">25</td><td class="num">64</td><td class="num up">+156%</td></tr><tr><td>Gross sales</td><td class="num">$13,249.51</td><td class="num">$14,779.13</td><td class="num up">+12%</td></tr><tr><td>Discounts</td><td class="num">$10,239.73</td><td class="num">$3,654.81</td><td class="num up">&minus;64%</td></tr></tbody></table></div></div><figure class="shot"><img src="yogable-april.webp" alt="Shopify Analytics for the Yogable store, 1 to 30 April 2026: gross sales 14.7K dollars, 64 orders and total sales of 11,617.61 dollars" width="1585" height="805" loading="lazy"><figcaption>Shopify Analytics, 1&ndash;30 April 2026: total sales $11,617.61 from 64 orders</figcaption></figure><figure class="shot"><img src="yogable-march.webp" alt="Shopify Analytics for the Yogable store, 1 to 31 March 2026 compared with April: gross sales 13.2K dollars, 25 orders and total sales of 2,979.41 dollars" width="1588" height="798" loading="lazy"><figcaption>Shopify Analytics, 1&ndash;31 March 2026 (compared with April): total sales $2,979.41 from 25 orders</figcaption></figure><p class="src">Source: Shopify Analytics, Yogable store, in USD. Total sales include taxes.</p></div></article>
+      <article class="cs" data-tags="meta whatsapp"><div class="cs-cv c1"><span class="cs-pill">Meta + WhatsApp</span><strong class="num">&#8377;0.83</strong><span class="cs-ml">per workshop sign-up</span></div><div class="cs-b"><div class="cs-w"><small>2025&ndash;2026</small></div><h3>WhatsApp lead engine for Digi Maniac</h3><p class="cs-s">Workshop sign-ups at &#8377;0.83 and WhatsApp enquiries that turn into enrolments.</p><div class="cs-k"><div><strong class="num">3,766</strong><span>Workshop sign-ups</span></div><div><strong class="num">&#8377;0.83</strong><span>Per registration</span></div><div><strong class="num">690+</strong><span>WhatsApp leads</span></div></div><button type="button" class="cs-btn" aria-haspopup="dialog">Read the breakdown<span aria-hidden="true">&#8594;</span></button></div><div class="cs-d" hidden><div class="sth"><div><small>Meta Ads + WhatsApp &middot; 2025&ndash;2026</small><h3>WhatsApp lead engine for Digi Maniac</h3></div><div class="row"><a class="tag" href="https://digimaniac.in" target="_blank" rel="noopener">digimaniac.in &#8599;</a></div></div><div class="kp"><div><strong class="num">3,766</strong><span>Workshop sign-ups</span></div><div><strong class="num">&#8377;0.83</strong><span>Per registration</span></div><div><strong class="num">690+</strong><span>WhatsApp leads</span></div><div><strong class="num">&#8377;57</strong><span>Avg. cost per lead</span></div></div><div class="cs3"><div><h4>Goal</h4><p>A steady flow of course enquiries from students aged 18&ndash;35 in Haryana, plus workshop registrations.</p></div><div><h4>What I did</h4><p>22 campaigns over 11 months: course leads, free workshops, UGC videos and retargeting, with AiSensy auto-replies.</p></div><div><h4>What I learned</h4><p>Workshop campaigns were the cheapest by far, and instant WhatsApp follow-up turned more enquiries into enrolments.</p></div></div></div></article>
+      <article class="cs" data-tags="seo meta"><div class="cs-cv c2"><span class="cs-pill">SEO + Meta &middot; B2B</span><strong class="num">883</strong><span class="cs-ml">messaging conversations in 30 days</span></div><div class="cs-b"><div class="cs-w"><small>2026</small></div><h3>Organic growth and a Meta lead engine for 9Cork, a B2B cork brand</h3><p class="cs-s">SEO on two websites, plus Meta ads that started 880+ buyer conversations in 30 days.</p><div class="cs-k"><div><strong class="num">883</strong><span>Messaging conversations, last 30 days</span></div><div><strong class="num">&#8377;30,461</strong><span>Meta spend, same period</span></div><div><strong class="num">&#8377;34.50</strong><span>Cost per conversation</span></div></div><button type="button" class="cs-btn" aria-haspopup="dialog">Read the breakdown<span aria-hidden="true">&#8594;</span></button></div><div class="cs-d" hidden><div class="sth"><div><small>SEO + Meta Ads &middot; B2B &middot; 2026</small><h3>Organic growth and a Meta lead engine for 9Cork, a B2B cork brand</h3></div><div class="row"><a class="tag" href="https://9cork.com/" target="_blank" rel="noopener">9cork.com &#8599;</a><a class="tag" href="https://www.instagram.com/cork_9cork/" target="_blank" rel="noopener">Instagram &#8599;</a></div></div><div class="kp"><div><strong class="num">883</strong><span>Messaging conversations, last 30 days</span></div><div><strong class="num">&#8377;30,461</strong><span>Meta spend, same period</span></div><div><strong class="num">&#8377;34.50</strong><span>Cost per conversation</span></div><div><strong class="num">2</strong><span>Websites run end to end</span></div></div><div class="cs3"><div><h4>Goal</h4><p>Grow organic search visibility for a wholesale cork brand and bring in steady B2B and bulk-order enquiries through paid ads.</p></div><div><h4>What I did</h4><p>Ran SEO on both 9cork.com and ninecork.com, tracked in Search Console, and built Meta campaigns for cork wall panels that start conversations with buyers.</p></div><div><h4>What I learned</h4><p>In the last 30 days, about <b>&#8377;30.5K on Meta started 883 conversations</b>, at around &#8377;34.50 each. SEO builds the base, and ads fill the pipeline while it grows.</p></div></div><figure class="shot"><img src="9cork-meta.webp" alt="Meta Ads Manager for the 9Cork Lead Engine account, 22 Oct to 20 Nov 2026, showing three wall panel campaigns with 362, 270 and 251 messaging conversations at about 35, 33 and 35 rupees each" width="1762" height="415" loading="lazy"><figcaption>Meta Ads Manager, 22 Oct &ndash; 20 Nov 2026: three wall-panel campaigns, 883 messaging conversations</figcaption></figure><p class="src">Source: Meta Ads Manager, 22 Oct &ndash; 20 Nov 2026, three active wall-panel campaigns. Results are messaging conversations started.</p></div></article>
+      <article class="cs" data-tags="google"><div class="cs-cv cs-img"><img src="zvezda-cover.webp" alt="" loading="lazy" width="530" height="325"><span class="cs-pill">Google Ads &middot; Performance Max</span></div><div class="cs-b"><div class="cs-w"><span class="live-dot"><i></i>Live</span><small>2026</small></div><h3>Phone calls for Zvezda Hair Salon in Kurukshetra</h3><p class="cs-s">83 phone calls from a small local budget, and the campaign is still running.</p><div class="cs-k"><div><strong class="num">83</strong><span>Phone calls from ads</span></div><div><strong class="num">&#8377;10,439</strong><span>Total spend</span></div><div><strong class="num">&#8377;126</strong><span>Cost per phone call</span></div></div><button type="button" class="cs-btn" aria-haspopup="dialog">Read the breakdown<span aria-hidden="true">&#8594;</span></button></div><div class="cs-d" hidden><div class="sth"><div><small>Google Ads &middot; Performance Max &middot; Live</small><h3>Phone calls for Zvezda Hair Salon in Kurukshetra</h3></div><div class="row"><a class="tag" href="https://www.instagram.com/zvezdaluxurysalon07/" target="_blank" rel="noopener">@zvezdaluxurysalon07 &#8599;</a></div></div><div class="kp"><div><strong class="num">83</strong><span>Phone calls from ads</span></div><div><strong class="num">&#8377;10,439</strong><span>Total spend</span></div><div><strong class="num">&#8377;126</strong><span>Cost per phone call</span></div><div><strong class="num">13.53%</strong><span>Click-through rate</span></div></div><div class="cs3"><div><h4>Goal</h4><p>Get local customers in Kurukshetra to call a luxury hair salon directly, on a small monthly budget.</p></div><div><h4>What I did</h4><p>Launched a Performance Max campaign on Maximise conversions, built around local searches like "salon near me" and set up to count phone calls.</p></div><div><h4>What I learned</h4><p>A small local budget can work hard. 83 calls from 2,587 clicks at about &#8377;126 each, and the campaign is still running.</p></div></div><figure class="shot"><img src="zvezda-google-ads.webp" alt="Google Ads campaigns view for Zvezda Hair Salon showing 19,117 impressions, 2,587 clicks, 83 phone calls and a cost of 10,439 rupees" width="1542" height="722" loading="lazy"><figcaption>Google Ads, 24 Aug &ndash; 20 Nov 2026: 83 phone calls, &#8377;10,439.24 spend</figcaption></figure></div></article>
+      <article class="cs" data-tags="seo"><div class="cs-cv cs-img"><img src="digimaniac-gsc-cover.webp" alt="" loading="lazy" width="600" height="375"><span class="cs-pill">SEO &middot; Search Console</span></div><div class="cs-b"><div class="cs-w"><small>Last 6 months</small></div><h3>SEO growth for Digi Maniac: clicks up 2.5x in six months</h3><p class="cs-s">Organic clicks up 150% and average position up from 14.5 to 11.7.</p><div class="cs-k"><div><strong class="num">+150%</strong><span>Organic clicks vs previous 6 months</span></div><div><strong class="num">10.7K</strong><span>Clicks, last 6 months (was 4.28K)</span></div><div><strong class="num">174K</strong><span>Impressions (was 97.4K)</span></div></div><button type="button" class="cs-btn" aria-haspopup="dialog">Read the breakdown<span aria-hidden="true">&#8594;</span></button></div><div class="cs-d" hidden><div class="sth"><div><small>SEO &middot; Google Search Console &middot; Last 6 months vs previous 6 months</small><h3>SEO growth for Digi Maniac: clicks up 2.5x in six months</h3></div><div class="row"><a class="tag" href="https://digimaniac.in" target="_blank" rel="noopener">digimaniac.in &#8599;</a></div></div><div class="kp"><div><strong class="num">+150%</strong><span>Organic clicks vs previous 6 months</span></div><div><strong class="num">10.7K</strong><span>Clicks, last 6 months (was 4.28K)</span></div><div><strong class="num">174K</strong><span>Impressions (was 97.4K)</span></div><div><strong class="num">11.7</strong><span>Avg. position (was 14.5)</span></div></div><div class="cs3"><div><h4>Goal</h4><p>Grow organic visibility for the institute's website, so more students find its courses and workshops through Google search.</p></div><div><h4>What I did</h4><p>Worked on the site's SEO alongside the paid campaigns, and tracked every month in Search Console.</p></div><div><h4>What I learned</h4><p>Compared with the previous six months, <b>clicks rose from 4.28K to 10.7K</b> and impressions from 97.4K to 174K. Average CTR went from 4.4% to 6.1%.</p></div></div><figure class="shot"><img src="digimaniac-gsc.webp" alt="Google Search Console for digimaniac.in comparing the last 6 months with the previous 6 months: 10.7K clicks against 4.28K, 174K impressions against 97.4K, average CTR 6.1% against 4.4%, average position 11.7 against 14.5" width="1300" height="545" loading="lazy"><figcaption>Google Search Console, digimaniac.in: last 6 months vs previous 6 months</figcaption></figure><p class="src">Source: Google Search Console, Search results (Web), last 6 months compared with the previous 6 months.</p></div></article>
+      <article class="cs" data-tags="meta"><div class="cs-cv c1"><span class="cs-pill">Meta Ads &middot; Digi Maniac</span><strong class="num">112</strong><span class="cs-ml">campaigns run in 2026</span></div><div class="cs-b"><div class="cs-w"><small>2026</small></div><h3>112 Meta campaigns in 2026 for Digi Maniac: courses, hiring and awareness</h3><p class="cs-s">Course admissions, staff hiring and awareness across Haryana, all from one ad account.</p><div class="cs-k"><div><strong class="num">112</strong><span>Campaigns with delivery in 2026</span></div><div><strong class="num">556</strong><span>Leads from the best course campaign (&#8377;34 each)</span></div><div><strong class="num">484</strong><span>Conversations from one October campaign</span></div></div><button type="button" class="cs-btn" aria-haspopup="dialog">Read the breakdown<span aria-hidden="true">&#8594;</span></button></div><div class="cs-d" hidden><div class="sth"><div><small>Meta Ads &middot; Digi Maniac &middot; 1 Jan &ndash; 21 Nov 2026</small><h3>112 Meta campaigns in 2026 for Digi Maniac: courses, hiring and awareness</h3></div><div class="row"><a class="tag" href="https://digimaniac.in" target="_blank" rel="noopener">digimaniac.in &#8599;</a></div></div><div class="kp"><div><strong class="num">112</strong><span>Campaigns with delivery in 2026</span></div><div><strong class="num">556</strong><span>Leads from the best course campaign (&#8377;34 each)</span></div><div><strong class="num">484</strong><span>Conversations from one October campaign</span></div><div><strong class="num">&#8377;7.77</strong><span>Cost per lead, SEO hiring campaign</span></div></div><div class="cs3"><div><h4>Goal</h4><p>Fill batches for the institute's digital marketing, video editing, UX/UI, graphic design and IELTS/PTE courses, and recruit staff, across Haryana.</p></div><div><h4>What I did</h4><p>Ran 112 campaigns in 2026 across lead forms, messaging and awareness, split by course and by city (Ambala, Karnal, Kaithal, Kurukshetra, Panipat), with retargeting on top.</p></div><div><h4>What I learned</h4><p>Hiring campaigns were the cheapest, such as <b>235 leads at &#8377;7.77</b>. In the rows shown, city-level campaigns cost &#8377;101&ndash;&#8377;165 per conversation, while the broader Haryana campaigns cost &#8377;67&ndash;&#8377;70 per result.</p></div></div><div class="cmp"><h4>Campaigns from the screenshots</h4><div class="cmp-s"><table><thead><tr><th>Campaign</th><th>Results</th><th>Cost per result</th><th>Spend</th></tr></thead><tbody><tr><td>DM | Haryana | 7th Oct</td><td class="num">484 conversations</td><td class="num">&#8377;69.75</td><td class="num">&#8377;33,760</td></tr><tr><td>VE Course | Haryana | 27th July</td><td class="num">556 leads</td><td class="num">&#8377;34.08</td><td class="num">&#8377;18,950</td></tr><tr><td>DM | Haryana | Students | 12th Aug</td><td class="num">496 leads</td><td class="num">&#8377;66.92</td><td class="num">&#8377;33,190</td></tr><tr><td>Hiring: SEO Executive</td><td class="num">235 leads</td><td class="num">&#8377;7.77</td><td class="num">&#8377;1,826</td></tr><tr><td>Hiring: SMM, Kurukshetra (Aug)</td><td class="num">347 leads</td><td class="num">&#8377;21.29</td><td class="num">&#8377;7,386</td></tr><tr><td>DM | Awareness | 12th Aug</td><td class="num">16.4 L people reached</td><td class="num">&#8377;4.52 per 1,000</td><td class="num">&#8377;7,423</td></tr></tbody></table></div></div><figure class="shot"><img src="dm2026-1.webp" alt="Meta Ads Manager for Digi Maniac, March 2026 campaigns: course, UGC and hiring campaigns with results and cost per result" width="1795" height="540" loading="lazy"><figcaption>March 2026: UX/UI course, UGC and hiring campaigns</figcaption></figure><figure class="shot"><img src="dm2026-2.webp" alt="Meta Ads Manager for Digi Maniac, July 2026 city campaigns for Karnal, Kaithal, Ambala and Kurukshetra" width="1795" height="540" loading="lazy"><figcaption>July 2026: city campaigns for Karnal, Kaithal, Ambala and Kurukshetra</figcaption></figure><figure class="shot"><img src="dm2026-3.webp" alt="Meta Ads Manager for Digi Maniac, late July 2026: video editing course and hiring campaigns" width="1795" height="540" loading="lazy"><figcaption>Late July 2026: video editing course (556 leads at &#8377;34.08) and hiring campaigns</figcaption></figure><figure class="shot"><img src="dm2026-4.webp" alt="Meta Ads Manager for Digi Maniac, August 2026: awareness, student lead and hiring campaigns" width="1795" height="540" loading="lazy"><figcaption>August 2026: awareness, student lead campaigns and hiring (SEO, SMM, video editing)</figcaption></figure><figure class="shot"><img src="dm2026-5.webp" alt="Meta Ads Manager for Digi Maniac, September 2026: graphic design, digital marketing and retargeting campaigns" width="1795" height="540" loading="lazy"><figcaption>September 2026: graphic design, digital marketing and retargeting campaigns</figcaption></figure><figure class="shot"><img src="dm2026-6.webp" alt="Meta Ads Manager for Digi Maniac, November 2026: active campaigns including a 7 October campaign with 484 conversations" width="1795" height="540" loading="lazy"><figcaption>November 2026: campaigns active now, including 484 conversations from the 7 Oct campaign</figcaption></figure><p class="src">Source: Meta Ads Manager, Digi Maniac ad account, 1 Jan &ndash; 21 Nov 2026, campaigns with delivery. Screenshots show scrolled sections of the list, so rows are examples, not totals.</p></div></article>
     </div>
   </div>
 </section>
 
-<section id="experience">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Career</span>
-      <h2>Professional <span class="accent">Experience</span></h2>
-      <p>3+ years managing and building websites across multiple CMS platforms.</p>
-    </div>
-    <div class="exp-wrap">
-      <div class="exp-item reveal">
-        <div class="when">Current</div>
-        <h3>Project Manager & Front-End Developer</h3>
-        <div class="role-meta">Add company / agency name · Add dates</div>
-        <p>Leading website projects from scoping through launch, coordinating design and development, and building front-end sections across WordPress, Shopify, Wix, Webflow and Squarespace.</p>
-      </div>
-      <div class="exp-item reveal">
-        <div class="when">Earlier</div>
-        <h3>Front-End Developer</h3>
-        <div class="role-meta">Add company / agency name · Add dates</div>
-        <p>Built and maintained responsive websites, implemented custom sections, and supported multi-platform CMS projects.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills" style="background:var(--mist);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Expertise</span>
-      <h2>Technical <span class="accent">Skills</span></h2>
-      <p>Platforms and tools used to plan, build and ship projects.</p>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card reveal"><h3>🗂️ Project Management</h3><ul><li>Scoping</li><li>Timelines</li><li>Client Comms</li><li>QA</li></ul></div>
-      <div class="skill-card reveal"><h3>🟦 WordPress</h3><ul><li>Custom Themes</li><li>Elementor</li><li>WooCommerce</li><li>Plugins</li></ul></div>
-      <div class="skill-card reveal"><h3>🛍️ Shopify</h3><ul><li>Liquid</li><li>Theme Custom.</li><li>Storefront Setup</li></ul></div>
-      <div class="skill-card reveal"><h3>🌐 Website Builders</h3><ul><li>Wix</li><li>Webflow</li><li>Squarespace</li></ul></div>
-      <div class="skill-card reveal"><h3>💻 Front-End</h3><ul><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Responsive Design</li></ul></div>
-      <div class="skill-card reveal"><h3>⚡ Performance</h3><ul><li>Page Speed</li><li>Cross-Browser QA</li><li>Accessibility Basics</li></ul></div>
-      <div class="skill-card reveal"><h3>🧰 Tools</h3><ul><li>Figma</li><li>Trello / Asana</li><li>Slack</li><li>Google Workspace</li></ul></div>
-      <div class="skill-card reveal"><h3>🤝 Other</h3><ul><li>Stakeholder Updates</li><li>Team Coordination</li></ul></div>
-    </div>
-  </div>
-</section>
-
-<section id="process">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Process</span>
-      <h2>From Idea to <span class="accent">Live Site</span></h2>
-      <p>A structured, transparent process from kickoff to launch.</p>
-    </div>
-    <div class="process-grid">
-      <div class="proc-card reveal"><div class="proc-num">01</div><h3>Discovery & Scoping</h3><p>Understand goals, audience and requirements before any work begins.</p></div>
-      <div class="proc-card reveal"><div class="proc-num">02</div><h3>Planning & Design</h3><p>Timeline, wireframes and platform selection agreed with the client.</p></div>
-      <div class="proc-card reveal"><div class="proc-num">03</div><h3>Build</h3><p>Development across the chosen CMS with regular progress check-ins.</p></div>
-      <div class="proc-card reveal"><div class="proc-num">04</div><h3>Testing & QA</h3><p>Cross-browser, responsive and performance checks before launch.</p></div>
-      <div class="proc-card reveal"><div class="proc-num">05</div><h3>Launch</h3><p>Deployment, DNS/hosting setup and final client walkthrough.</p></div>
-      <div class="proc-card reveal"><div class="proc-num">06</div><h3>Support</h3><p>Post-launch monitoring, fixes and ongoing updates as needed.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="faq" style="background:var(--mist);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2>Common <span class="accent">Questions</span></h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item reveal">
-        <button class="faq-q">Which platforms do you work on? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-in">WordPress, Shopify, Wix, Webflow and Squarespace — from setup to full custom builds.</div></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">Do you manage the whole project, or just build? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-in">Both — I can lead the project end-to-end, or join as a front-end developer within an existing team.</div></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">How do you communicate during a project? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-in">Regular updates via email or WhatsApp, with a single point of contact for the whole build.</div></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">What's your typical timeline? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-in">Depends on scope — small sites can launch in 1–2 weeks, larger builds take longer. Timeline is agreed upfront.</div></div>
-      </div>
-      <div class="faq-item reveal">
-        <button class="faq-q">Do you offer post-launch support? <span class="plus">+</span></button>
-        <div class="faq-a"><div class="faq-a-in">Yes — ongoing updates, fixes and monitoring are available after launch.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap" style="padding:0;">
-  <div class="cta-band reveal">
-    <div class="badge">Currently accepting new projects</div>
-    <h2>Ready to Build <span class="accent-amber">Something Great?</span></h2>
-    <p>Let's plan and build a fast, well-run website project — from first call to launch day.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="#contact">Start a Project</a>
-      <a class="btn btn-ghost" href="https://wa.me/917018439223" target="_blank" rel="noopener">Message on WhatsApp</a>
-    </div>
-    <div class="trust-row">
-      <span>Free consultation</span><span>24-hour response</span><span>Clear timelines</span>
-    </div>
+<div class="md" id="md" hidden>
+  <div class="md-p" role="dialog" aria-modal="true" aria-label="Case study details">
+    <button type="button" class="md-x" id="mdc" aria-label="Close">&times;</button>
+    <div class="md-b" id="mdb"></div>
   </div>
 </div>
 
-<section id="contact">
-  <div class="wrap contact-grid">
-    <div class="contact-info reveal">
-      <span class="eyebrow">Contact</span>
-      <h2 style="font-size:32px;margin-bottom:12px;">Let's <span class="accent">Connect</span></h2>
-      <p>Have a project in mind? Reach out and let's talk through the details.</p>
-
-      <div class="info-row">
-        <div class="info-icon">✉️</div>
-        <div><div class="label">Email</div><div class="value">braj.user@gmail.com</div></div>
-      </div>
-      <div class="info-row">
-        <div class="info-icon">📞</div>
-        <div><div class="label">Phone / WhatsApp</div><div class="value">+91 70184 39223</div></div>
-      </div>
-      <div class="info-row">
-        <div class="info-icon">⏱️</div>
-        <div><div class="label">Response Time</div><div class="value">Within 24 hours</div></div>
-      </div>
-      <div class="social-row">
-        <a href="https://www.linkedin.com/in/braj-user/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-        <a href="https://wa.me/917018439223" target="_blank" rel="noopener" aria-label="WhatsApp">wa</a>
-      </div>
+<section id="blog">
+  <div class="wrap ff">
+    <div class="ffl">
+      <div class="eyebrow">My own project</div>
+      <h2>Feed My Fur, my pet-care blog.</h2>
+      <p>A blog for dog and cat owners that I built and run myself. It's where I practise everything I teach: <b>WordPress and Elementor</b> for the site, <b>keyword research</b> for every topic, and <b>on-page SEO</b> on every post.</p>
+      <p>Categories cover dog care, cat care, nutrition, training and pet health, with short, practical guides owners can read in two minutes.</p>
+      <div class="chips"><span>WordPress</span><span>Elementor</span><span>Blogging</span><span>Content SEO</span><span>Newsletter</span></div>
+      <div class="row" style="margin-top:6px"><a class="btn pri" href="https://feedmyfur.com/" target="_blank" rel="noopener">Visit feedmyfur.com &#8599;</a></div>
     </div>
-
-    <form class="contact-form reveal" onsubmit="event.preventDefault(); alert('Form submitted — connect this to your email service to receive messages.');">
-      <div class="form-row">
-        <div><label>First Name*</label><input required type="text"></div>
-        <div><label>Last Name*</label><input required type="text"></div>
+    <a class="ffr" href="https://feedmyfur.com/" target="_blank" rel="noopener" style="text-decoration:none" aria-label="Open Feed My Fur">
+      <span class="paw" aria-hidden="true">&#128062;</span>
+      <div class="row" style="gap:12px"><div class="brow"><i></i><i></i><i></i></div><span class="url">feedmyfur.com</span></div>
+      <div><h3>Feed My Fur</h3><p class="tagl">Big love. Little paws. Better pet days.</p></div>
+      <div class="posts">
+        <div>A Practical Guide to Feeding Indoor Cats<span>Cat care</span></div>
+        <div>Five Reward-Based Training Games for Puppies<span>Training</span></div>
+        <div>How to Build a Calm Daily Routine for Your Dog<span>Dog care</span></div>
       </div>
-      <div class="form-row">
-        <div><label>Email*</label><input required type="email"></div>
-        <div><label>Phone</label><input type="tel"></div>
-      </div>
-      <div class="form-row full">
-        <div><label>Service*</label>
-          <select required>
-            <option value="">Select...</option>
-            <option>WordPress Development</option>
-            <option>Shopify Store / App</option>
-            <option>Wix Website</option>
-            <option>Webflow Website</option>
-            <option>Squarespace Website</option>
-            <option>Project Management</option>
-            <option>Other</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div><label>Budget (USD)</label><input type="text" placeholder="e.g. 500 - 1000"></div>
-        <div><label>Timeline</label>
-          <select>
-            <option value="">Select...</option>
-            <option>ASAP (Rush)</option>
-            <option>1-2 Weeks</option>
-            <option>2-4 Weeks</option>
-            <option>1-2 Months</option>
-            <option>Flexible</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row full">
-        <div><label>Project Details*</label><textarea required placeholder="Tell me about your project..."></textarea></div>
-      </div>
-      <button class="btn btn-primary" style="width:100%;justify-content:center;" type="submit">Send Message →</button>
-      <p class="submit-note">Response guaranteed within 24 hours</p>
-    </form>
+    </a>
   </div>
 </section>
 
-<footer class="site">
+<section id="path">
   <div class="wrap">
-    <div class="footer-row">
-      <div class="logo"><span class="dot"></span>Bodh Raj</div>
-      <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+    <div class="eyebrow">Experience</div>
+    <h2 class="big">Where I've <em>delivered.</em></h2>
+    <div class="tlw">
+      <div class="tl"><span>2025 &ndash; Present<br>1.5 years</span>
+        <div><h3>Performance Marketing Lead &amp; Trainer</h3><p class="at">Digi Maniac &middot; Kurukshetra, Haryana</p>
+          <ul><li>Lead the institute's ads team across Meta and Google, now spending &#8377;1 L+ a month on Meta.</li><li>Ran 112 Meta campaigns in 2026 for courses, hiring and awareness across Haryana.</li><li>Trained 500+ students in digital marketing, SEO, Google Ads, Meta Ads, analytics and AI tools.</li><li>Run weekly workshops on websites with AI, GA4, GTM and campaign optimisation.</li></ul></div></div>
+      <div class="tl"><span>2024 &ndash; Present<br>2 years &middot; Freelance</span>
+        <div><h3>Digital Marketer</h3><p class="at">9Cork &middot; B2B sustainable cork products &middot; <a href="https://9cork.com/" target="_blank" rel="noopener">9cork.com</a> &amp; <a href="https://ninecork.com/" target="_blank" rel="noopener">ninecork.com</a> &middot; <a href="https://www.instagram.com/cork_9cork/" target="_blank" rel="noopener">Instagram</a></p>
+          <ul><li>Handle SEO, Meta Ads, website management and WhatsApp marketing for a wholesale brand selling corporate gifts, yoga mats, wall coverings and HORECA products.</li><li>Run both of the brand's websites end to end, from content and SEO to updates and tracking.</li></ul></div></div>
+      <div class="tl"><span>2025 &ndash; Present<br>1 year &middot; Freelance</span>
+        <div><h3>Digital Marketer &middot; US e-commerce</h3><p class="at">Yogable &middot; Eco-friendly yoga products &middot; <a href="https://yogableshop.com/" target="_blank" rel="noopener">yogableshop.com</a> &middot; <a href="https://www.instagram.com/yogablecollection/" target="_blank" rel="noopener">Instagram</a></p>
+          <ul><li>Built the Google Ads account from scratch and cut average CPC by 88%, from $1.10 to $0.13.</li><li>Run Reddit SEO to put the brand in front of US buyers researching yoga gear.</li><li>Monthly store sales rose from $2,979 in March to $11,618 in April 2026 (3.9x).</li></ul></div></div>
+      <div class="tl"><span>3 years</span>
+        <div><h3>SEO Executive &rarr; Digital Marketing Manager &amp; Team Lead</h3><p class="at">Websoftrix Infotech</p>
+          <ul><li><b>Year 1, SEO Executive:</b> technical audits, on-page SEO, keyword research and Search Console for client websites.</li><li><b>Years 2&ndash;3, Digital Marketing Manager &amp; Team Lead:</b> led the team across SEO, Meta Ads, Google Ads and website projects.</li><li>Built client websites on WordPress, Elementor, Shopify and Wix.</li></ul></div></div>
+      <div class="tl"><span>2 years</span>
+        <div><h3>Digital Marketer &middot; US projects</h3><p class="at">US client projects &middot; for <a href="https://www.graciousmarketing.com/" target="_blank" rel="noopener">Gracious Marketing</a>, New York</p>
+          <ul><li>Delivered SEO, Google Ads and web work for the US clients of a New York agency with 120+ clients across home renovation, finance, car rental and tutoring.</li></ul></div></div>
+      <div class="tl"><span>Side project</span>
+        <div><h3>Founder &amp; Blogger</h3><p class="at">Feed My Fur &middot; Pet-care blog</p>
+          <ul><li>Built and run my own WordPress blog, from keyword research to every published post.</li></ul></div></div>
+      <div class="tl"><span>Education</span>
+        <div><h3>BA Economics</h3><p class="at">The base for a data-first approach to marketing</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="stack" style="padding-top:20px">
+  <div class="wrap">
+    <h2 class="big out">The stack</h2>
+    <div class="sg">
+      <div class="sk"><h3>Ads</h3><ul><li>Google Ads</li><li>Meta Ads</li><li>Snapchat Ads</li><li>WhatsApp ads</li><li>Funnel strategy</li></ul></div>
+      <div class="sk"><h3>SEO &amp; tracking</h3><ul><li>Search Console</li><li>GA4</li><li>Google Tag Manager</li><li>Keyword research</li></ul></div>
+      <div class="sk"><h3>Websites</h3><ul><li>WordPress &amp; Elementor</li><li>Shopify</li><li>Wix</li><li>Landing pages</li></ul></div>
+      <div class="sk"><h3>Automation &amp; AI</h3><ul><li>Zoho CRM, AiSensy</li><li>Zapier</li><li>ChatGPT, Claude</li><li>NotebookLM, Gamma, Lovable</li></ul></div>
+    </div>
+    <p class="tg2">Certifications</p>
+    <div><span class="cp">SEO Fundamentals<small>Semrush Academy</small></span><span class="cp">ChatGPT for Beginners<small>Great Learning</small></span><span class="cp">Rank in Google AI Overviews</span><span class="cp">Social Media Automation with AI</span><span class="cp">30-Day AI Course<small>Digital Scholar</small></span></div>
+  </div>
+</section>
+
+<section id="learn">
+  <div class="wrap">
+    <div class="br">
+      <div class="eyebrow">Your turn</div>
+      <h2>Every number on this page is a skill you can learn.</h2>
+      <p>At Digi Maniac I teach the same playbook I use on live accounts. You build, launch and read real campaigns, not slides.</p>
+      <div class="steps">
+        <div><span>01</span><b>Build</b><p>Websites and landing pages with WordPress and AI tools.</p></div>
+        <div><span>02</span><b>Rank</b><p>SEO that brings free traffic from Google.</p></div>
+        <div><span>03</span><b>Advertise</b><p>Meta and Google Ads, from setup to scaling.</p></div>
+        <div><span>04</span><b>Track &amp; automate</b><p>GA4, WhatsApp and CRM flows that turn leads into sales.</p></div>
+      </div>
+      <div class="row">
+        <a class="btn pri" href="https://digimaniac.in" target="_blank" rel="noopener">Explore the course &#8599;</a>
+        <a class="btn" href="https://wa.me/917018439223?text=Hi%20Bodh%2C%20I%20attended%20your%20workshop%20and%20want%20to%20know%20about%20the%20digital%20marketing%20course." target="_blank" rel="noopener">Ask me on WhatsApp</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 Bodh Raj. All rights reserved. · Built with clean code & attention to detail.</div>
   </div>
-</footer>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2 class="big">Let's <em>talk.</em></h2>
+    <p class="lead">Questions about a career in digital marketing, the course, a website or a campaign? Reach out any way you like.</p>
+    <div class="ct">
+      <div class="ci"><small>WhatsApp / Phone</small><span class="v num">+91 70184 39223</span><div class="acts"><button class="mini-b" data-copy="+917018439223">Copy</button><a class="mini-b" href="https://wa.me/917018439223" target="_blank" rel="noopener">Open chat</a></div></div>
+      <div class="ci"><small>Email</small><span class="v">braj.user@gmail.com</span><div class="acts"><button class="mini-b" data-copy="braj.user@gmail.com">Copy</button></div></div>
+      <div class="ci"><small>LinkedIn</small><span class="v">in/braj-user</span><div class="acts"><a class="mini-b" href="https://www.linkedin.com/in/braj-user/" target="_blank" rel="noopener">View profile</a></div></div>
+      <div class="ci"><small>Websites</small><span class="v">marketingwithraj.com<br>feedmyfur.com</span><div class="acts"><a class="mini-b" href="https://marketingwithraj.com" target="_blank" rel="noopener">Portfolio</a><a class="mini-b" href="https://feedmyfur.com/" target="_blank" rel="noopener">Blog</a></div></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><a class="btn" href="#top">Back to top &#8593;</a><span>&copy; 2026 Bodh Raj &middot; Complete Digital Marketer &amp; Trainer</span></div></footer>
+<a class="btn pri fab" href="https://wa.me/917018439223" target="_blank" rel="noopener">Message me</a>
 
 <script>
-  // scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:.15});
-  revealEls.forEach(el=>io.observe(el));
+(function(){
+var D=document,root=D.documentElement;
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+function $(s,c){return Array.prototype.slice.call((c||D).querySelectorAll(s))}
+function tok(n){return getComputedStyle(root).getPropertyValue(n).trim()}
 
-  // stat counters
-  const counters = document.querySelectorAll('.stat .num');
-  let countersDone = false;
-  const statObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting && !countersDone){
-        countersDone = true;
-        counters.forEach(c=>{
-          const target = parseInt(c.dataset.count,10);
-          let cur = 0;
-          const step = Math.max(1, Math.round(target/40));
-          const tick = ()=>{
-            cur += step;
-            if(cur >= target){ c.textContent = target + (target>=90?'%':'+'); }
-            else { c.textContent = cur; requestAnimationFrame(()=>setTimeout(tick,16)); }
-          };
-          tick();
-        });
-      }
-    });
-  },{threshold:.4});
-  const statsRow = document.getElementById('statsRow');
-  if(statsRow) statObserver.observe(statsRow);
+/* theme: follows the device by default, remembers the choice */
+var tb=D.getElementById('theme');
+function isDark(){return root.getAttribute('data-theme')==='dark'}
+function syncTheme(){tb.setAttribute('aria-checked',isDark());tb.querySelector('.k').innerHTML=isDark()?'&#9790;':'&#9728;';CA=tok('--ac');CB=tok('--ac2');CI=tok('--p3');drawChart();if(still&&Wd)frame()}
+var sys='light';try{sys=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){}
+try{var sv=localStorage.getItem('br-theme');root.setAttribute('data-theme',sv||sys)}catch(e){root.setAttribute('data-theme',sys)}
+tb.onclick=function(){var n=isDark()?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('br-theme',n)}catch(e){}requestAnimationFrame(syncTheme)};
 
-  // faq accordion
-  document.querySelectorAll('.faq-item').forEach(item=>{
-    const q = item.querySelector('.faq-q');
-    const a = item.querySelector('.faq-a');
-    q.addEventListener('click', ()=>{
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(o=>{ o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; });
-      if(!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
-    });
-  });
+/* accordion */
+$('.rh').forEach(function(b){b.onclick=function(){var o=b.parentNode.classList.toggle('open');b.setAttribute('aria-expanded',o)}});
 
-  // mobile menu (simple toggle of nav-links display)
-  const toggle = document.querySelector('.menu-toggle');
-  const links = document.querySelector('.nav-links');
-  if(toggle){
-    toggle.addEventListener('click', ()=>{
-      const showing = links.style.display === 'flex';
-      links.style.display = showing ? 'none' : 'flex';
-      links.style.flexDirection = 'column';
-      links.style.position = 'absolute';
-      links.style.top = '64px';
-      links.style.left = '0';
-      links.style.right = '0';
-      links.style.background = '#fff';
-      links.style.padding = '20px 24px';
-      links.style.borderBottom = '1px solid var(--line)';
-    });
-  }
+/* copy */
+$('[data-copy]').forEach(function(b){b.onclick=function(){
+  var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)};
+  try{navigator.clipboard.writeText(b.dataset.copy).then(done,function(){sel(b)})}catch(e){sel(b)}}});
+function sel(b){var v=b.closest('.ci').querySelector('.v'),r=D.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}
+
+/* active nav + progress */
+var ids=['about','services','live','work','blog','path','contact'],nl=$('.links a'),spb=D.getElementById('sp');
+addEventListener('scroll',function(){
+  var h=Math.max(1,root.scrollHeight-innerHeight);spb.style.transform='scaleX('+Math.min(1,scrollY/h)+')';
+  var cur='';ids.forEach(function(id){var s=D.getElementById(id);if(s.getBoundingClientRect().top<innerHeight*.4)cur=id});
+  nl.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+},{passive:true});
+
+/* typing */
+var tye=D.getElementById('tye'),TW=['SEO specialist','performance marketer','website developer','Meta, Google & Snapchat Ads lead','digital marketing trainer'],tI=0,tC=TW[0].length,tD=true;
+function typing(){if(still)return;var w=TW[tI];tC+=tD?-1:1;tye.textContent=w.slice(0,tC);var d=tD?35:75;
+  if(!tD&&tC===w.length){tD=true;d=1600}else if(tD&&tC===0){tD=false;tI=(tI+1)%TW.length;d=320}setTimeout(typing,d)}
+setTimeout(typing,2000);
+
+/* counters: final value visible at rest, replays when in view */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting||still)return;var el=e.target,n=+el.dataset.n,s=el.dataset.s||'',f=el.dataset.f,t0=null;
+  (function g(t){t0=t0||t;var p=Math.min((t-t0)/1300,1),v=Math.round(n*(1-Math.pow(1-p,3)));el.textContent=(f?v.toLocaleString('en-IN'):v)+s;if(p<1)requestAnimationFrame(g)})(performance.now());
+  io.unobserve(el)})},{threshold:.6});
+$('[data-n]').forEach(function(x){io.observe(x)});
+
+/* chart */
+function drawChart(){
+  var M=[['Jul',72045,559],['Aug',94674,1494],['Sep',104478,762],['Oct*',113184,680]];
+  var W=640,H=300,L=58,R=58,T=26,B=40,pw=W-L-R,ph=H-T-B,sMax=120000,lMax=1600;
+  var ac=tok('--ac'),p3=tok('--p3'),mut=tok('--mut'),line=tok('--line'),ink=tok('--ink'),surf=tok('--surf');
+  var bw=pw/M.length,g='',F='font-family="JetBrains Mono,monospace"';
+  for(var i=0;i<=4;i++){var y=T+ph-ph*i/4;g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y+'" y2="'+y+'" stroke="'+line+'" stroke-width="1"/>'+
+    '<text x="'+(L-10)+'" y="'+(y+4)+'" text-anchor="end" fill="'+mut+'" font-size="11" '+F+'>₹'+(sMax*i/4/1000)+'K</text>'+
+    '<text x="'+(W-R+10)+'" y="'+(y+4)+'" fill="'+mut+'" font-size="11" '+F+'>'+(lMax*i/4)+'</text>'}
+  var pts=[];
+  M.forEach(function(m,i){var x=L+bw*i+bw*.2,w=bw*.6,h=ph*m[1]/sMax,y=T+ph-h,cx=L+bw*i+bw/2;
+    g+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="10" fill="'+ac+'"><title>'+m[0]+': ₹'+m[1].toLocaleString('en-IN')+'</title></rect>'+
+      '<text x="'+cx+'" y="'+(y-8)+'" text-anchor="middle" fill="'+ink+'" font-size="12" font-weight="600" '+F+'>₹'+(m[1]/1000).toFixed(0)+'K</text>'+
+      '<text x="'+cx+'" y="'+(H-14)+'" text-anchor="middle" fill="'+mut+'" font-size="12" '+F+'>'+m[0]+' 2026</text>';
+    pts.push([cx,T+ph-ph*m[2]/lMax,m[2]])});
+  g+='<polyline points="'+pts.map(function(p){return p[0]+','+p[1]}).join(' ')+'" fill="none" stroke="'+p3+'" stroke-width="2.5" stroke-linejoin="round"/>';
+  pts.forEach(function(p){g+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="6" fill="'+surf+'" stroke="'+p3+'" stroke-width="2.5"/>'+
+    '<text x="'+(p[0]+12)+'" y="'+(p[1]-8)+'" fill="'+ink+'" font-size="12" font-weight="600" '+F+'>'+p[2].toLocaleString('en-IN')+'</text>'});
+  D.getElementById('chart').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg">'+g+'</svg>';
+}
+
+/* hero dots morph: wave, bar chart, funnel */
+var hero=D.getElementById('top'),cv=D.getElementById('fx'),cx=cv.getContext('2d');
+var Wd,Ht,DP=Math.min(devicePixelRatio||1,2),N=innerWidth<700?800:1700,k=0,mx=0,my=0,tx=0,ty=0,live=true,t=0,CA,CB,CI;
+function shapes(){
+  var a=new Float32Array(N*2),b=new Float32Array(N*2),c=new Float32Array(N*2),i,c0=Math.round(Math.sqrt(N*2.2)),bars=[.35,.5,.42,.68,.6,.85,1],nb=7;
+  for(i=0;i<N;i++){
+    var gx=(i%c0)/c0*2-1,gz=Math.floor(i/c0)/(N/c0)*2-1;a[i*2]=gx*1.1+gz*.25;a[i*2+1]=.32*Math.sin(gx*4+gz*3)*Math.cos(gz*2)+gz*.45;
+    var bi=i%nb;b[i*2]=-1+(bi+.5)*2/nb+(Math.random()-.5)*(1.3/nb);b[i*2+1]=1-Math.random()*bars[bi]*2;
+    var fy=-1+2*Math.random(),fw=(1-(fy+1)/2*.82)*.95;c[i*2]=(Math.random()*2-1)*fw;c[i*2+1]=fy;
+  }return [a,b,c]}
+var T=shapes(),P=new Float32Array(N*2);for(var i=0;i<N*2;i++)P[i]=T[0][i]+(still?0:(Math.random()-.5)*3);
+function size(){Wd=hero.clientWidth;Ht=hero.clientHeight;cv.width=Wd*DP;cv.height=Ht*DP;cx.setTransform(DP,0,0,DP,0,0)}
+function frame(){
+  var tg=T[k],sp=still?1:.05,sx=Wd<960?Wd*.44:Wd*.24,sy=Ht*.3,ox=Wd<960?Wd*.5:Wd*.62,oy=Ht*.53,cols=[CA,CB,CI];
+  tx+=(mx-tx)*.05;ty+=(my-ty)*.05;t+=.012;cx.clearRect(0,0,Wd,Ht);
+  for(var c=0;c<3;c++){cx.fillStyle=cols[c];cx.globalAlpha=c==2?.55:.9;
+    for(var i=c;i<N;i+=3){var q=i*2;P[q]+=(tg[q]-P[q])*sp;P[q+1]+=(tg[q+1]-P[q+1])*sp;
+      var x=ox+(P[q]+tx*.07)*sx,y=oy+(P[q+1]+ty*.07)*sy+(k===0?Math.sin(t*2+P[q]*5)*5:0);cx.fillRect(x,y,2,2)}}
+  cx.globalAlpha=1}
+function loop(){if(live)frame();requestAnimationFrame(loop)}
+hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();mx=(e.clientX-r.left)/r.width*2-1;my=(e.clientY-r.top)/r.height*2-1;hero.style.setProperty('--gx',(e.clientX-r.left)+'px');hero.style.setProperty('--gy',(e.clientY-r.top)+'px')});
+setInterval(function(){if(live&&!still)k=(k+1)%3},5200);
+new IntersectionObserver(function(es){live=es[0].isIntersecting}).observe(hero);
+addEventListener('resize',function(){size();if(still)frame()});
+size();syncTheme();if(still)frame();else loop();
+
+/* case studies: filter + detail dialog */
+var cards=$('.cs'),fl=$('.flt button'),md=D.getElementById('md'),mb=D.getElementById('mdb'),mc=D.getElementById('mdc'),lastF=null;
+fl.forEach(function(b){b.onclick=function(){fl.forEach(function(x){x.setAttribute('aria-pressed',x===b)});var f=b.dataset.f;
+  cards.forEach(function(c){c.hidden=!(f==='all'||c.dataset.tags.split(' ').indexOf(f)>-1)})}});
+function openCs(c){lastF=D.activeElement;mb.innerHTML=c.querySelector('.cs-d').innerHTML;md.hidden=false;D.body.style.overflow='hidden';md.querySelector('.md-p').scrollTop=0;mc.focus()}
+function closeCs(){md.hidden=true;D.body.style.overflow='';if(lastF)lastF.focus()}
+cards.forEach(function(c){c.querySelector('.cs-btn').onclick=function(){openCs(c)}});
+mc.onclick=closeCs;
+md.addEventListener('click',function(e){if(e.target===md)closeCs()});
+addEventListener('keydown',function(e){if(e.key==='Escape'&&!md.hidden)closeCs()});
+
+/* cursor, magnetic buttons, tilt */
+if(fine&&!still){
+  root.classList.add('cur');
+  var cD=D.getElementById('cd'),cR=D.getElementById('cr'),x0=-100,y0=-100,rx=-100,ry=-100;
+  addEventListener('pointermove',function(e){x0=e.clientX;y0=e.clientY;cD.style.transform='translate('+x0+'px,'+y0+'px) translate(-50%,-50%)';
+    cR.classList.toggle('hv',!!(e.target.closest&&e.target.closest('a,button')))});
+  (function ring(){rx+=(x0-rx)*.18;ry+=(y0-ry)*.18;cR.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';requestAnimationFrame(ring)})();
+  $('.btn,.lt').forEach(function(b){if(b.classList.contains('fab'))return;b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.22)+'px,'+((e.clientY-r.top-r.height/2)*.32)+'px)'});
+    b.addEventListener('pointerleave',function(){b.style.transform=''})});
+  $('.stats div,.sk,.steps div,.mini .panel').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+    c.style.transform='perspective(800px) rotateX('+(-py*7)+'deg) rotateY('+(px*9)+'deg) translateY(-6px)'});c.addEventListener('pointerleave',function(){c.style.transform=''})});
+}
+})();
 </script>
 </body>
 </html>
